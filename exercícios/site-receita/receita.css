@@ -1,28 +1,27 @@
-/* Fundo diva-pro com a imagem do bolo */
+
 body {
     font-family: 'Poppins', sans-serif;
     background: url('receita.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: #333;
+    color: #cfcece;
     max-width: 750px;
     margin: auto;
     padding: 20px;
     position: relative;
 }
 
-/* Overlay para dar o efeito de fade */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(255, 250, 252, 0.88); /* tom clarinho */
-    backdrop-filter: blur(2px);
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(9px);
+    opacity: 0.8;
     z-index: -1;
 }
 
-/* Cabeçalho */
 header {
-    background-color: rgba(255, 182, 193, 0.9);
+    background-color: #c2185b;
     padding: 15px;
     text-align: center;
     border-radius: 15px;
@@ -30,25 +29,23 @@ header {
 }
 
 h1 {
-    color: #4a235a;
+    color: #ffd1e8;
     font-weight: 500;
 }
 
 .intro {
     font-size: 1.1em;
-    color: #4a235a;
+    color: #ffd1e8;
 }
 
-/* Curiosidade */
 .curiosidade {
     text-align: center;
     font-style: italic;
     margin: 20px 0;
 }
 
-/* Caixas */
 .caixa {
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(14, 14, 14, 0.788);
     border-radius: 12px;
     padding: 15px;
     margin: 20px 0;
@@ -56,18 +53,17 @@ h1 {
 }
 
 h2 {
-    color: #6c3483;
+    color: #e78cbe;
     border-bottom: 2px solid #e8daef;
     padding-bottom: 5px;
 }
 
-/* Listas */
 ul li {
     list-style-type: square;
 }
 
 blockquote {
-    background-color: rgba(252, 228, 236, 0.9);
+    background-color: rgba(14, 12, 13, 0.9);
     border-left: 5px solid #c2185b;
     padding: 10px;
     font-style: italic;
@@ -75,14 +71,13 @@ blockquote {
     border-radius: 10px;
 }
 
-/* Link vídeo */
 .link-video {
     text-align: center;
     margin-top: 25px;
 }
 
 a {
-    color: #8e44ad;
+    color: #d485ba;
     text-decoration: none;
     font-weight: bold;
 }
@@ -91,20 +86,19 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Rodapé diva */
 footer {
     text-align: center;
     margin-top: 40px;
     padding: 15px;
-    background: rgba(255, 182, 193, 0.9);
-    border-radius: 15px;
+    background: #c2185ce7;
+    border-radius: 10px;
     box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
 }
 
 .foto-perfil {
-    width: 120px;
+    width: 420px;
     height: auto;
-    border-radius: 50%;
+    border-radius: 10%;
     margin-bottom: 10px;
     box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
 }
