@@ -1,16 +1,28 @@
-/* Fonte e fundo diva-pro */
+/* Fundo diva-pro com a imagem do bolo */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(180deg, #fffafc, #ffeef5);
+    background: url('receita.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #333;
     max-width: 750px;
     margin: auto;
     padding: 20px;
+    position: relative;
+}
+
+/* Overlay para dar o efeito de fade */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 250, 252, 0.88); /* tom clarinho */
+    backdrop-filter: blur(2px);
+    z-index: -1;
 }
 
 /* Cabeçalho */
 header {
-    background-color: #ffb6c1;
+    background-color: rgba(255, 182, 193, 0.9);
     padding: 15px;
     text-align: center;
     border-radius: 15px;
@@ -22,38 +34,27 @@ h1 {
     font-weight: 500;
 }
 
-/* Parágrafo de curiosidade */
+.intro {
+    font-size: 1.1em;
+    color: #4a235a;
+}
+
+/* Curiosidade */
 .curiosidade {
     text-align: center;
     font-style: italic;
     margin: 20px 0;
 }
 
-/* Imagem diva */
-.foto-bolo {
-    display: block;
-    margin: 15px auto;
-    border-radius: 15px;
-    width: 320px;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
-}
-
-/* Efeito hover na imagem */
-.foto-bolo:hover {
-    transform: scale(1.05);
-}
-
-/* Caixas de conteúdo */
+/* Caixas */
 .caixa {
-    background-color: #fff;
+    background-color: rgba(255,255,255,0.9);
     border-radius: 12px;
     padding: 15px;
     margin: 20px 0;
     box-shadow: 0px 2px 6px rgba(0,0,0,0.08);
 }
 
-/* Títulos das seções */
 h2 {
     color: #6c3483;
     border-bottom: 2px solid #e8daef;
@@ -66,7 +67,7 @@ ul li {
 }
 
 blockquote {
-    background-color: #fce4ec;
+    background-color: rgba(252, 228, 236, 0.9);
     border-left: 5px solid #c2185b;
     padding: 10px;
     font-style: italic;
@@ -74,7 +75,7 @@ blockquote {
     border-radius: 10px;
 }
 
-/* Link bonitinho */
+/* Link vídeo */
 .link-video {
     text-align: center;
     margin-top: 25px;
@@ -88,4 +89,22 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Rodapé diva */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 15px;
+    background: rgba(255, 182, 193, 0.9);
+    border-radius: 15px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+.foto-perfil {
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
 }
