@@ -1,0 +1,91 @@
+/* Fonte e fundo diva-pro */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #fffafc, #ffeef5);
+    color: #333;
+    max-width: 750px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #ffb6c1;
+    padding: 15px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #4a235a;
+    font-weight: 500;
+}
+
+/* Parágrafo de curiosidade */
+.curiosidade {
+    text-align: center;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+/* Imagem diva */
+.foto-bolo {
+    display: block;
+    margin: 15px auto;
+    border-radius: 15px;
+    width: 320px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+/* Efeito hover na imagem */
+.foto-bolo:hover {
+    transform: scale(1.05);
+}
+
+/* Caixas de conteúdo */
+.caixa {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Títulos das seções */
+h2 {
+    color: #6c3483;
+    border-bottom: 2px solid #e8daef;
+    padding-bottom: 5px;
+}
+
+/* Listas */
+ul li {
+    list-style-type: square;
+}
+
+blockquote {
+    background-color: #fce4ec;
+    border-left: 5px solid #c2185b;
+    padding: 10px;
+    font-style: italic;
+    margin: 25px 0;
+    border-radius: 10px;
+}
+
+/* Link bonitinho */
+.link-video {
+    text-align: center;
+    margin-top: 25px;
+}
+
+a {
+    color: #8e44ad;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
