@@ -31,3 +31,29 @@ nav > ul {
     padding: 10px 0;
     gap: 10px;
 }
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    background-color: #af4c84;
+    border-radius: 5px;
+}
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+h2 {
+    color: #af4c84;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: #333 0px 0px 10px;
+}
