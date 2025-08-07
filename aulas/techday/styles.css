@@ -7,13 +7,19 @@ body{
     color: #333;
 }
 .hero {
-    background-color: #de37b7;
+    background-color: #4537de;
     color: white;
     padding: 20px 60px;
     border-radius: 8px;
     background-image: url('hero.png');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
 }
 .btn {
     background-color: #609df8;
@@ -41,4 +47,9 @@ body{
     max-width: 300px;
     display: inline-block;
     width: 250%;
+}
+
+.card > img {
+    max-width: 100%;
+    border-radius: 8px;
 }
