@@ -1,0 +1,44 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+}
+.hero {
+    background-color: #de37b7;
+    color: white;
+    padding: 20px 60px;
+    border-radius: 8px;
+    background-image: url('hero.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.btn {
+    background-color: #609df8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+.btn:hover {
+    background-color: #4a7ecf;
+
+}
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 300px;
+    display: inline-block;
+    width: 250%;
+}
