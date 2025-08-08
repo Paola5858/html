@@ -1,164 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>00's party</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #111;
-      color: #fcd4f9;
-      overflow-x: hidden;
-    }
-
-    .hero {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0,0,0,0.6)), url("hero.jpg");
-      background-size: cover;
-      background-position: center;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin: 0;
-      color: #f6b3f0;
-    }
-
-    .hero p {
-      margin: 10px 0 20px;
-      font-style: italic;
-    }
-
-    .btn {
-      background: #f6b3f0;
-      color: #111;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-      display: inline-block;
-      margin-top: 10px;
-    }
-
-    .btn:hover {
-      background: #e875e8;
-    }
-
-    section {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-
-    h2 {
-      color: #ffb3f6;
-      text-align: center;
-    }
-
-    .card-container {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .card {
-      background-color: #1a1a1a;
-      border-radius: 10px;
-      padding: 20px;
-      width: 240px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .organiza {
-      text-align: center;
-    }
-
-    .organiza img {
-      width: 200px;
-      border-radius: 50%;
-      margin-top: 20px;
-      border: 4px solid #f6b3f0;
-    }
-
-    footer {
-      background-image: url("rodape.jpg");
-      background-size: cover;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    iframe {
-      border-radius: 10px;
-      width: 100%;
-      height: 200px;
-      margin-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>00's Party</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="hero">
-    <h1>00's party</h1>
-    <p>revivendo os hits, os looks e as vibes mais icônicas de todos os tempos</p>
-    <a href="#confirmar" class="btn">confirmar presença</a>
-  </header>
+    <header class="hero">
+        <h1>00's party</h1>
+        <p>revivendo os hits, os looks e as vibes mais icônicas de todos os tempos</p>
+        <a href="#confirmar" class="btn">confirmar presença</a>
+    </header>
 
-  <section>
-    <h2>o que esperar</h2>
-    <div class="card-container">
-      <div class="card">
-        <img src="playlist.jpg" alt="música">
-        <h3>playlist</h3>
-        <p>vai ter black eyed peas, rihanna, beyoncé, avril e mais...</p>
-      </div>
-      <div class="card">
-        <img src="outifit.jpg" alt="look">
-        <h3>outfit</h3>
-        <p>vale pochete, brilho, franja, bandana e polaina!</p>
-      </div>
-      <div class="card">
-        <img src="convidados.jpg" alt="convidados">
-        <h3>convidados</h3>
-        <p>só quem viveu sabe. e vai viver de novo ♥</p>
-      </div>
-    </div>
-  </section>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#o-que-esperar">o que esperar</a></li>
+            <li><a href="#quem-ta-por-tras">quem tá por trás</a></li>
+            <li><a href="#entrando-no-clima">entrando no clima</a></li>
+            <li><a href="#bombom">bombom do fabiano</a></li>
+            <li><a href="#confirmar">confirmar presença</a></li>
+        </ul>
+    </nav>
 
-  <section class="organiza">
-    <h2>quem tá por trás</h2>
-    <p>tudo feito com carinho por mim mesma: paola soares machado</p>
-    <img src="eu.jpg" alt="foto da paola">
-    <div>
-      <a href="https://instagram.com/paolakskj" class="btn" target="_blank">me segue no insta!</a>
-    </div>
-  </section>
+    <section id="o-que-esperar">
+        <h2>o que esperar</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="playlist.jpg" alt="música">
+                <h3>playlist</h3>
+                <p>vai ter black eyed peas, rihanna, beyoncé, avril e mais...</p>
+            </div>
+            <div class="card">
+                <img src="outifit.jpg" alt="look">
+                <h3>outfit</h3>
+                <p>vale pochete, brilho, franja, bandana e polaina!</p>
+            </div>
+            <div class="card">
+                <img src="convidados.jpg" alt="convidados">
+                <h3>convidados</h3>
+                <p>só quem viveu sabe. e vai viver de novo ♥</p>
+            </div>
+        </div>
+    </section>
 
-<section>
-    <h2>entrando no clima</h2>
-    <p>já vai se preparando com essa playlist perfeita:</p>
-    <a href="https://open.spotify.com/playlist/37i9dQZF1DX2lVtkHKv4aA" target="_blank" class="btn-playlist">ver playlist no spotify</a>
-</section>
+    <section id="quem-ta-por-tras" class="organiza">
+        <h2>quem tá por trás</h2>
+        <p>tudo feito com carinho por mim mesma: paola soares machado</p>
+        <img src="eu.jpg" alt="foto da paola">
+        <div>
+            <a href="https://instagram.com/paolakskj" class="btn" target="_blank">me segue no insta!</a>
+        </div>
+    </section>
 
-  <section id="confirmar">
-    <h2>vem com a gente!</h2>
-    <p>confirma sua presença, chama as amigas e prepara o look</p>
-    <a href="#" class="btn">confirmar</a>
-  </section>
+    <section id="entrando-no-clima">
+        <h2>entrando no clima</h2>
+        <p>já vai se preparando com essa playlist perfeita:</p>
+        <a href="https://open.spotify.com/playlist/37i9dQZF1DX2lVtkHKv4aA" target="_blank" class="btn-playlist">ouvir a playlist</a>
+    </section>
 
-  <footer>
-    <p>00's party - criado por @paolakskj</p>
-  </footer>
+    <section id="bombom">
+        <h2>bombom do fabiano</h2>
+        <p>não esquece de trazer seu bombom, porque a festa não é a mesma sem ele! 🍬</p>
+        <img src="bombom.jpg" alt="bombom" class="bombom-img">
+    </section>
+
+    <section id="confirmar">
+        <h2>vem com a gente!</h2>
+        <p>confirma sua presença, chama as amigas e prepara o look</p>
+        <a href="#" class="btn">confirmar</a>
+    </section>
+
+    <footer>
+        <p>00's party - criado por @paolakskj</p>
+    </footer>
 </body>
 </html>
