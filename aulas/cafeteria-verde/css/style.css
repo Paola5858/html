@@ -27,11 +27,66 @@ img{
     height: auto;
 }
 header{
-    display: flex;
+
+    border-bottom: #e5e7eb 1px solid;
+    background-color: white;
+}
+
+.container{
     max-width: 1110px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.topbar{
+    display: flex;
     justify-content: space-between;
-    background-color: var(--greenprimary);
-    color: var(--cream);
-    padding: 20px;
-    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.brand{
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+
+.brand-name{
+    font-weight: 700;
+    color: var(--greensecondary);
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 16px;
+    align-items: center;
+    height: 100%;
+}
+
+.cta{
+    display: flex;
+    gap: 16px;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: #0f2a26 1px solid;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.btn:hover{
+    background-color: var(--greensecondary);
+    color: white;
+}
+
+.btn-fill{
+    background-color: var(--greentertiary);
+    color: white;
 }
