@@ -26,3 +26,12 @@ img{
     max-width: 100%;
     height: auto;
 }
+header{
+    display: flex;
+    max-width: 1110px;
+    justify-content: space-between;
+    background-color: var(--greenprimary);
+    color: var(--cream);
+    padding: 20px;
+    text-align: center;
+}
