@@ -90,3 +90,14 @@ nav ul{
     background-color: var(--greentertiary);
     color: white;
 }
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 64px 0;
+    background-color: linear-gradient(120deg, var(--greenprimary), var(--greensecondary));
+    color: white;
+}
