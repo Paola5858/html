@@ -1,9 +1,10 @@
 :root{
-    --greenprimary: #0f2a26;
-    --greensecondary: #1e3932;
-    --greentertiary: #2d6a4f;
+    --greenprimary: #1e3932;
+    --greensecondary: #2d6a4f;
+    --greentertiary: #4a9e7f;
     --cream: #f5f3ee;
     --text: #1f2937;
+    --white: #ffffff;
 }
 *{
     padding: 0;
@@ -91,13 +92,67 @@ nav ul{
     color: white;
 }
 
+.btn-outline{
+    background-color: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+.btn-outline:hover{
+    background-color: var(--white);
+    color: var(--greenprimary);
+}
+
 .hero{
+    padding: 80px 0;
+    background: linear-gradient(120deg, var(--greenprimary), var(--greensecondary));
+    color: var(--white);
+    min-height: 600px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 64px 0;
-    background-color: linear-gradient(120deg, var(--greenprimary), var(--greensecondary));
-    color: white;
+    
+}
+
+.hero-wrap{
+    width: 100%;
+}
+
+.hero-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-text h1{
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--white);
+}
+
+.hero-text p{
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    opacity: 0.9;
+}
+
+.btn-row{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.hero-art{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hero-art img{
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
 }
