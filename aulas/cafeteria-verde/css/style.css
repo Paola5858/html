@@ -155,3 +155,34 @@ nav ul{
     height: auto;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
 }
+
+.banners{
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 80px;
+    padding: 24px 0;
+}
+
+.banner {
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 320px;
+    min-width: 280px;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    padding: 18px;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    gap: 10px;
+    transition: transform .15s ease, box-shadow 0.3s ease;
+}
+
+.banner-dark{
+    background: var(--greenprimary);
+    color: var(--white);
+}
