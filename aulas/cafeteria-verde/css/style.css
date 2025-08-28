@@ -182,6 +182,10 @@ nav ul{
     transition: transform .15s ease, box-shadow 0.3s ease;
 }
 
+.banner:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
 .banner-dark{
     background: var(--greenprimary);
     color: var(--white);
