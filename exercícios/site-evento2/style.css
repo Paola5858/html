@@ -1,0 +1,140 @@
+:root {
+    --cor-fundo: #0A0A0A;
+    --cor-texto: #F5F5F5;
+    --gradiente: linear-gradient(135deg, #8A2BE2, #00BFFF, #FF1493);
+    --destaque: #FF1493;
+    --hover: #00BFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: var(--gradiente);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.navbar h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--hover);
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    background: url('festival.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    background: var(--gradiente);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(255, 20, 147, 0.6);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: var(--cor-texto);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--destaque);
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px var(--destaque), 0 0 20px var(--destaque);
+}
+
+.btn:hover {
+    background: var(--hover);
+    box-shadow: 0 0 15px var(--hover), 0 0 30px var(--hover);
+    transform: scale(1.05);
+}
+
+/* SOBRE */
+.sobre {
+    padding: 60px 20px;
+    text-align: center;
+    background: #111;
+}
+
+.sobre h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    background: var(--gradiente);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sobre p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* FOOTER */
+.footer {
+    background: #111;
+    text-align: center;
+    padding: 20px;
+    color: var(--cor-texto);
+    font-size: 0.9rem;
+}
