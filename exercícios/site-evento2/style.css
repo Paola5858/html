@@ -1,9 +1,9 @@
 :root {
+    --gradiente: linear-gradient(135deg, #FF6A00, #002D62);
     --cor-fundo: #0A0A0A;
-    --cor-texto: #F5F5F5;
-    --gradiente: linear-gradient(135deg, #8A2BE2, #00BFFF, #FF1493);
-    --destaque: #FF1493;
-    --hover: #00BFFF;
+    --cor-texto: #F2F2F2;
+    --destaque: #FF6A00;
+    --hover: #004080;
 }
 
 * {
@@ -27,13 +27,13 @@ body {
     padding: 15px 40px;
     background: var(--gradiente);
     color: white;
-    font-family: 'Orbitron', sans-serif;
 }
 
-.navbar h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
+.logo {
+    font-family: 'Staatliches', sans-serif;
+    font-size: 2rem;
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .navbar a {
@@ -45,13 +45,13 @@ body {
 }
 
 .navbar a:hover {
-    color: var(--hover);
+    color: var(--destaque);
 }
 
 /* HERO */
 .hero {
     height: 90vh;
-    background: url('festival.jpg') center/cover no-repeat;
+    background: url('aurorabeats-bg.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,19 +74,20 @@ body {
 }
 
 .hero h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.8rem;
-    margin-bottom: 20px;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 15px;
     background: var(--gradiente);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 15px rgba(255, 20, 147, 0.6);
 }
 
-.hero p {
-    font-size: 1.2rem;
+.slogan {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 1.5rem;
     margin-bottom: 25px;
     color: var(--cor-texto);
+    text-shadow: 0 0 10px rgba(255, 106, 0, 0.8);
 }
 
 .btn {
@@ -99,12 +100,12 @@ body {
     font-weight: bold;
     font-size: 1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 0 10px var(--destaque), 0 0 20px var(--destaque);
+    box-shadow: 0 0 15px rgba(255, 106, 0, 0.8);
 }
 
 .btn:hover {
     background: var(--hover);
-    box-shadow: 0 0 15px var(--hover), 0 0 30px var(--hover);
+    box-shadow: 0 0 20px rgba(0, 45, 98, 0.8);
     transform: scale(1.05);
 }
 
@@ -116,12 +117,10 @@ body {
 }
 
 .sobre h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 2.2rem;
     margin-bottom: 20px;
-    background: var(--gradiente);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--destaque);
 }
 
 .sobre p {
