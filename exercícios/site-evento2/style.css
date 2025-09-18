@@ -1,0 +1,139 @@
+:root {
+    --gradiente: linear-gradient(135deg, #FF6A00, #002D62);
+    --cor-fundo: #0A0A0A;
+    --cor-texto: #F2F2F2;
+    --destaque: #FF6A00;
+    --hover: #004080;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: var(--gradiente);
+    color: white;
+}
+
+.logo {
+    font-family: 'Staatliches', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--destaque);
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    background: url('aurorabeats-bg.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-family: 'Staatliches', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    background: var(--gradiente);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.slogan {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: var(--cor-texto);
+    text-shadow: 0 0 10px rgba(255, 106, 0, 0.8);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--destaque);
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 106, 0, 0.8);
+}
+
+.btn:hover {
+    background: var(--hover);
+    box-shadow: 0 0 20px rgba(0, 45, 98, 0.8);
+    transform: scale(1.05);
+}
+
+/* SOBRE */
+.sobre {
+    padding: 60px 20px;
+    text-align: center;
+    background: #111;
+}
+
+.sobre h2 {
+    font-family: 'Staatliches', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--destaque);
+}
+
+.sobre p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* FOOTER */
+.footer {
+    background: #111;
+    text-align: center;
+    padding: 20px;
+    color: var(--cor-texto);
+    font-size: 0.9rem;
+}
