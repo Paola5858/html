@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imagens Catwoman</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #0f0f1a, #1e1e2f);
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff4da6;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+      width: 280px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .card h2 {
+      font-size: 1rem;
+      margin-top: 12px;
+      color: #ff8c42;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <h1>Galeria — Catwoman 🐾</h1>
+
+  <div class="galeria">
+    <div class="card">
+      <img src="catwoman.jpg" alt="Catwoman JPG">
+      <h2>Formato JPG</h2>
+    </div>
+
+    <div class="card">
+      <img src="catwoman.png" alt="Catwoman PNG">
+      <h2>Formato PNG</h2>
+    </div>
+
+    <div class="card">
+      <img src="catwoman.svg" alt="Catwoman SVG">
+      <h2>Formato SVG</h2>
+    </div>
+  </div>
+
+  <footer>
+    <p>feito por paola 💎</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+/* === arquivo: fontes/fonte1.css === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root{
+  --bg:#0f1720;
+  --card:#0b1220;
+  --text:#f8fafc;
+  --accent:#ff7a59;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg,#06122b,#071127);
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px;
+}
+main{
+  max-width:880px;
+  background:rgba(255,255,255,0.03);
+  padding:28px;
+  border-radius:12px;
+  box-shadow:0 6px 30px rgba(0,0,0,0.6);
+}
+h1{font-weight:600; font-size:2rem; margin-bottom:14px; color:var(--accent)}
+p{font-weight:300; line-height:1.6}
