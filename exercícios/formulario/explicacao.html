@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explicação dos Campos</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Quicksand&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: #fff0f6;
+    color: #333;
+    padding: 2rem;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    border-radius: 14px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(255,77,166,0.2);
+  }
+  h1 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #ff4da6;
+    margin-bottom: 2rem;
+  }
+  .campo {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 2px dashed #ffb3d9;
+    border-radius: 10px;
+    background: #fff9fc;
+  }
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #e03e8c;
+    margin-bottom: 0.5rem;
+  }
+  code {
+    display: block;
+    background: #fff0f6;
+    color: #99004d;
+    padding: 0.4rem;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+    font-family: monospace;
+  }
+  ul {
+    margin: 0.5rem 0 0 1.5rem;
+  }
+  .voltar {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .voltar a {
+    text-decoration: none;
+    background: #ff4da6;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    box-shadow: 0 3px 6px rgba(255,77,166,0.4);
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1> Guia de Atributos do Formulário</h1>
+
+    <div class="campo">
+      <h2> Texto (text)</h2>
+      <code>&lt;input type="text" name="nome"&gt;</code>
+      <ul>
+        <li><strong>Usado para:</strong> Entrada de texto simples</li>
+        <li><strong>Atributos:</strong> placeholder, required, maxlength</li>
+      </ul>
+    </div>
+
+    <div class="campo">
+      <h2> Senha (password)</h2>
+      <code>&lt;input type="password" name="senha"&gt;</code>
+      <ul>
+        <li>Oculta os caracteres digitados</li>
+        <li>Atributos extras: minlength, maxlength, required</li>
+      </ul>
+    </div>
+
+    <div class="campo">
+      <h2> E-mail (email)</h2>
+      <code>&lt;input type="email" name="email"&gt;</code>
+      <ul>
+        <li>Valida o formato de e-mail automaticamente</li>
+        <li>Atributos extras: required, placeholder</li>
+      </ul>
+    </div>
+
+    <div class="campo">
+      <h2> Número (number)</h2>
+      <code>&lt;input type="number" name="idade" min="0" max="120"&gt;</code>
+      <ul>
+        <li>Entrada numérica com controle de mínimo e máximo</li>
+      </ul>
+    </div>
+
+    <div class="campo">
+      <h2> Rádio (radio)</h2>
+      <code>&lt;input type="radio" name="genero"&gt;</code>
+      <ul>
+        <li>Permite selecionar <strong>uma opção</strong> entre várias</li>
+        <li>Usado para: gênero, escolhas únicas</li>
+      </ul>
+    </div>
+
+    <div class="campo">
+      <h2> Checkbox (checkbox)</h2>
+      <code>&lt;input type="checkbox" name="interesses"&gt;</code>
+      <ul>
+        <li>Permite marcar <strong>várias opções</strong></li>
+        <li>Usado para: interesses, preferências</li>
+      </ul>
+    </div>
+
+    <div class="campo">
+      <h2> Select (Lista suspensa)</h2>
+      <code>
+&lt;select name="cidade"&gt;<br>
+&nbsp;&nbsp;&lt;option&gt;São Paulo&lt;/option&gt;<br>
+&lt;/select&gt;
+      </code>
+      <ul>
+        <li>Lista suspensa para escolher opções</li>
+      </ul>
+    </div>
+
+    <div class="campo">
+      <h2> Arquivo (file)</h2>
+      <code>&lt;input type="file" name="arquivo"&gt;</code>
+      <ul>
+        <li>Permite upload de arquivos do dispositivo</li>
+      </ul>
+    </div>
+
+    <div class="campo">
+      <h2> Botão Submit</h2>
+      <code>&lt;button type="submit"&gt;Enviar&lt;/button&gt;</code>
+      <ul>
+        <li>Envia o formulário</li>
+      </ul>
+    </div>
+
+    <div class="campo">
+      <h2> Botão Reset</h2>
+      <code>&lt;button type="reset"&gt;Limpar&lt;/button&gt;</code>
+      <ul>
+        <li>Reseta todos os campos para vazio</li>
+      </ul>
+    </div>
+
+    <div class="voltar">
+      <a href="formulario.html">⬅ Voltar ao Formulário</a>
+    </div>
+  </div>
+</body>
+</html>
