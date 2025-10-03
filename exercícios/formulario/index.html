@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio de Formulários Profissionais</title>
+  
+  <!-- Meta Tags -->
+  <meta name="description" content="Coleção profissional de formulários interativos demonstrando diferentes tipos de campos e funcionalidades modernas">
+  <meta name="keywords" content="formulários, HTML, CSS, JavaScript, web development, portfolio">
+  <meta name="author" content="Desenvolvedor Web">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <!-- Elementos Flutuantes de Fundo -->
+  <div class="floating-elements">
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+  </div>
+
+  <!-- Partículas de Fundo -->
+  <div class="particles-bg"></div>
+
+  <!-- Container Principal -->
+  <div class="form-container">
+    <!-- Header da Página -->
+    <header class="page-header">
+      <h1 class="page-title">
+        <i class="fas fa-clipboard-list"></i>
+        Portfólio de Formulários
+      </h1>
+      <p class="page-subtitle">
+        Coleção profissional de formulários interativos demonstrando diferentes tipos de campos e funcionalidades modernas para desenvolvimento web
+      </p>
+    </header>
+
+    <!-- Grid de Formulários -->
+    <div class="forms-grid">
+      
+      <!-- Formulário 1: Inscrição em Curso -->
+      <div class="form-card" data-category="education">
+        <div class="form-header">
+          <div class="form-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div>
+            <h2 class="form-title">Inscrição em Curso</h2>
+            <p class="text-gray-500">Sistema educacional completo</p>
+          </div>
+        </div>
+        
+        <form id="courseForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="courseName">
+              <i class="fas fa-user"></i>
+              Nome Completo
+            </label>
+            <input 
+              type="text" 
+              id="courseName" 
+              name="courseName"
+              class="form-input" 
+              placeholder="Digite seu nome completo" 
+              required
+              minlength="2"
+            >
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="courseEmail">
+              <i class="fas fa-envelope"></i>
+              Email
+            </label>
+            <input 
+              type="email" 
+              id="courseEmail" 
+              name="courseEmail"
+              class="form-input" 
+              placeholder="seu@email.com" 
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="courseAge">
+              <i class="fas fa-calendar-alt"></i>
+              Idade
+            </label>
+            <input 
+              type="number" 
+              id="courseAge" 
+              name="courseAge"
+              class="form-input" 
+              min="16" 
+              max="120" 
+              placeholder="Sua idade"
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">
+              <i class="fas fa-clock"></i>
+              Turno Preferido
+            </label>
+            <div class="radio-group">
+              <div class="radio-item">
+                <input type="radio" id="morning" name="turno" value="manha" required>
+                <label for="morning">Manhã</label>
+              </div>
+              <div class="radio-item">
+                <input type="radio" id="afternoon" name="turno" value="tarde">
+                <label for="afternoon">Tarde</label>
+              </div>
+              <div class="radio-item">
+                <input type="radio" id="evening" name="turno" value="noite">
+                <label for="evening">Noite</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="paymentMethod">
+              <i class="fas fa-credit-card"></i>
+              Forma de Pagamento
+            </label>
+            <select id="paymentMethod" name="paymentMethod" class="form-select" required>
+              <option value="">Selecione uma opção</option>
+              <option value="pix">PIX</option>
+              <option value="cartao">Cartão de Crédito</option>
+              <option value="boleto">Boleto Bancário</option>
+              <option value="transferencia">Transferência Bancária</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="courseMessage">
+              <i class="fas fa-comment"></i>
+              Mensagem Adicional
+            </label>
+            <textarea 
+              id="courseMessage" 
+              name="courseMessage"
+              class="form-textarea" 
+              placeholder="Conte-nos sobre seus objetivos e expectativas..."
+              rows="4"
+            ></textarea>
+          </div>
+          
+          <div class="form-buttons">
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i>
+              Enviar Inscrição
+            </button>
+            <button type="reset" class="btn btn-secondary">
+              <i class="fas fa-undo"></i>
+              Limpar Campos
+            </button>
+          </div>
+          
+          <div class="form-success" id="courseSuccess">
+            <i class="fas fa-check-circle"></i>
+            Inscrição enviada com sucesso!
+          </div>
+          
+          <div class="form-error" id="courseError">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span></span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Formulário 2: Feira de Ciências -->
+      <div class="form-card" data-category="science">
+        <div class="form-header">
+          <div class="form-icon">
+            <i class="fas fa-flask"></i>
+          </div>
+          <div>
+            <h2 class="form-title">Feira de Ciências</h2>
+            <p class="text-gray-500">Submissão de projetos científicos</p>
+          </div>
+        </div>
+        
+        <form id="scienceForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="projectTitle">
+              <i class="fas fa-lightbulb"></i>
+              Título do Projeto
+            </label>
+            <input 
+              type="text" 
+              id="projectTitle" 
+              name="projectTitle"
+              class="form-input" 
+              placeholder="Digite o título do seu projeto" 
+              required
+              minlength="5"
+            >
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="projectSummary">
+              <i class="fas fa-file-alt"></i>
+              Resumo do Projeto
+            </label>
+            <textarea 
+              id="projectSummary" 
+              name="projectSummary"
+              class="form-textarea" 
+              placeholder="Descreva brevemente seu projeto científico..."
+              rows="4"
+              required
+              minlength="50"
+            ></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="scienceArea">
+              <i class="fas fa-atom"></i>
+              Área Científica
+            </label>
+            <select id="scienceArea" name="scienceArea" class="form-select" required>
+              <option value="">Selecione a área</option>
+              <option value="biologia">Biologia</option>
+              <option value="fisica">Física</option>
+              <option value="quimica">Química</option>
+              <option value="matematica">Matemática</option>
+              <option value="tecnologia">Tecnologia</option>
+              <option value="meio-ambiente">Meio Ambiente</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">
+              <i class="fas fa-users"></i>
+              Membros da Equipe
+            </label>
+            <div class="checkbox-group">
+              <div class="checkbox-item">
+                <input type="checkbox" id="ana" name="team" value="ana">
+                <label for="ana">Ana Silva</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="joao" name="team" value="joao">
+                <label for="joao">João Santos</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="maria" name="team" value="maria">
+                <label for="maria">Maria Costa</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="pedro" name="team" value="pedro">
+                <label for="pedro">Pedro Lima</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">
+              <i class="fas fa-file-upload"></i>
+              Documentação do Projeto
+            </label>
+            <div class="file-input-wrapper">
+              <input type="file" id="projectFile" name="projectFile" class="file-input" accept=".pdf,.doc,.docx">
+              <label for="projectFile" class="file-input-label">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <span>Clique para selecionar arquivo</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-buttons">
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-microscope"></i>
+              Submeter Projeto
+            </button>
+            <button type="reset" class="btn btn-secondary">
+              <i class="fas fa-undo"></i>
+              Limpar Campos
+            </button>
+          </div>
+          
+          <div class="form-success" id="scienceSuccess">
+            <i class="fas fa-check-circle"></i>
+            Projeto submetido com sucesso!
+          </div>
+          
+          <div class="form-error" id="scienceError">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span></span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Formulário 3: Pedido na Lanchonete -->
+      <div class="form-card" data-category="food">
+        <div class="form-header">
+          <div class="form-icon">
+            <i class="fas fa-hamburger"></i>
+          </div>
+          <div>
+            <h2 class="form-title">Pedido na Lanchonete</h2>
+            <p class="text-gray-500">Sistema de pedidos gastronômicos</p>
+          </div>
+        </div>
+        
+        <form id="foodForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="customerName">
+              <i class="fas fa-user"></i>
+              Nome do Cliente
+            </label>
+            <input 
+              type="text" 
+              id="customerName" 
+              name="customerName"
+              class="form-input" 
+              placeholder="Seu nome" 
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="sandwich">
+              <i class="fas fa-hamburger"></i>
+              Lanche Principal
+            </label>
+            <select id="sandwich" name="sandwich" class="form-select" required>
+              <option value="">Escolha seu lanche</option>
+              <option value="x-burger">X-Burger Clássico - R$ 15,90</option>
+              <option value="x-salada">X-Salada Especial - R$ 17,90</option>
+              <option value="x-bacon">X-Bacon Gourmet - R$ 19,90</option>
+              <option value="x-tudo">X-Tudo Completo - R$ 22,90</option>
+              <option value="vegetariano">Burger Vegetariano - R$ 16,90</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">
+              <i class="fas fa-plus"></i>
+              Adicionais
+            </label>
+            <div class="checkbox-group">
+              <div class="checkbox-item">
+                <input type="checkbox" id="batata" name="extras" value="batata">
+                <label for="batata">Batata Frita (+R$ 8,00)</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="refrigerante" name="extras" value="refrigerante">
+                <label for="refrigerante">Refrigerante (+R$ 5,00)</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="milkshake" name="extras" value="milkshake">
+                <label for="milkshake">Milk-shake (+R$ 12,00)</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="sobremesa" name="extras" value="sobremesa">
+                <label for="sobremesa">Sobremesa (+R$ 7,00)</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">
+              <i class="fas fa-truck"></i>
+              Forma de Entrega
+            </label>
+            <div class="radio-group">
+              <div class="radio-item">
+                <input type="radio" id="retirada" name="entrega" value="retirada" required>
+                <label for="retirada">Retirada no Local</label>
+              </div>
+              <div class="radio-item">
+                <input type="radio" id="delivery" name="entrega" value="delivery">
+                <label for="delivery">Delivery (+R$ 5,00)</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="foodObservations">
+              <i class="fas fa-sticky-note"></i>
+              Observações Especiais
+            </label>
+            <textarea 
+              id="foodObservations" 
+              name="foodObservations"
+              class="form-textarea" 
+              placeholder="Alguma observação sobre seu pedido?"
+              rows="3"
+            ></textarea>
+          </div>
+          
+          <div class="form-buttons">
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-shopping-cart"></i>
+              Finalizar Pedido
+            </button>
+            <button type="reset" class="btn btn-secondary">
+              <i class="fas fa-undo"></i>
+              Limpar Pedido
+            </button>
+          </div>
+          
+          <div class="form-success" id="foodSuccess">
+            <i class="fas fa-check-circle"></i>
+            Pedido realizado com sucesso!
+          </div>
+          
+          <div class="form-error" id="foodError">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span></span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Formulário 4: Agendamento de Consulta -->
+      <div class="form-card" data-category="medical">
+        <div class="form-header">
+          <div class="form-icon">
+            <i class="fas fa-stethoscope"></i>
+          </div>
+          <div>
+            <h2 class="form-title">Agendamento de Consulta</h2>
+            <p class="text-gray-500">Sistema médico profissional</p>
+          </div>
+        </div>
+        
+        <form id="appointmentForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="patientName">
+              <i class="fas fa-user-injured"></i>
+              Nome do Paciente
+            </label>
+            <input 
+              type="text" 
+              id="patientName" 
+              name="patientName"
+              class="form-input" 
+              placeholder="Nome completo do paciente" 
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="patientEmail">
+              <i class="fas fa-envelope"></i>
+              Email de Contato
+            </label>
+            <input 
+              type="email" 
+              id="patientEmail" 
+              name="patientEmail"
+              class="form-input" 
+              placeholder="email@exemplo.com" 
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="patientPhone">
+              <i class="fas fa-phone"></i>
+              Telefone
+            </label>
+            <input 
+              type="tel" 
+              id="patientPhone" 
+              name="patientPhone"
+              class="form-input" 
+              placeholder="(11) 99999-9999" 
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="specialty">
+              <i class="fas fa-user-md"></i>
+              Especialidade Médica
+            </label>
+            <select id="specialty" name="specialty" class="form-select" required>
+              <option value="">Selecione a especialidade</option>
+              <option value="clinico-geral">Clínico Geral</option>
+              <option value="cardiologia">Cardiologia</option>
+              <option value="dermatologia">Dermatologia</option>
+              <option value="pediatria">Pediatria</option>
+              <option value="ginecologia">Ginecologia</option>
+              <option value="ortopedia">Ortopedia</option>
+              <option value="neurologia">Neurologia</option>
+              <option value="psiquiatria">Psiquiatria</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="appointmentDate">
+              <i class="fas fa-calendar"></i>
+              Data da Consulta
+            </label>
+            <input 
+              type="date" 
+              id="appointmentDate" 
+              name="appointmentDate"
+              class="form-input" 
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="appointmentTime">
+              <i class="fas fa-clock"></i>
+              Horário Preferido
+            </label>
+            <input 
+              type="time" 
+              id="appointmentTime" 
+              name="appointmentTime"
+              class="form-input" 
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <div class="checkbox-group">
+              <div class="checkbox-item">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">Concordo com os termos de atendimento e política de privacidade</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-buttons">
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-calendar-check"></i>
+              Agendar Consulta
+            </button>
+            <button type="reset" class="btn btn-secondary">
+              <i class="fas fa-undo"></i>
+              Limpar Campos
+            </button>
+          </div>
+          
+          <div class="form-success" id="appointmentSuccess">
+            <i class="fas fa-check-circle"></i>
+            Consulta agendada com sucesso!
+          </div>
+          
+          <div class="form-error" id="appointmentError">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span></span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Formulário 5: Cadastro no Clube Esportivo -->
+      <div class="form-card" data-category="sports">
+        <div class="form-header">
+          <div class="form-icon">
+            <i class="fas fa-running"></i>
+          </div>
+          <div>
+            <h2 class="form-title">Cadastro no Clube Esportivo</h2>
+            <p class="text-gray-500">Sistema de registro atlético</p>
+          </div>
+        </div>
+        
+        <form id="sportsForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="athleteName">
+              <i class="fas fa-medal"></i>
+              Nome do Atleta
+            </label>
+            <input 
+              type="text" 
+              id="athleteName" 
+              name="athleteName"
+              class="form-input" 
+              placeholder="Nome completo" 
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="athleteAge">
+              <i class="fas fa-birthday-cake"></i>
+              Idade
+            </label>
+            <input 
+              type="number" 
+              id="athleteAge" 
+              name="athleteAge"
+              class="form-input" 
+              min="5" 
+              max="80" 
+              placeholder="Idade do atleta"
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="athleteEmail">
+              <i class="fas fa-envelope"></i>
+              Email
+            </label>
+            <input 
+              type="email" 
+              id="athleteEmail" 
+              name="athleteEmail"
+              class="form-input" 
+              placeholder="email@exemplo.com" 
+              required
+            >
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">
+              <i class="fas fa-dumbbell"></i>
+              Modalidade Esportiva
+            </label>
+            <div class="radio-group">
+              <div class="radio-item">
+                <input type="radio" id="futebol" name="modalidade" value="futebol" required>
+                <label for="futebol">Futebol</label>
+              </div>
+              <div class="radio-item">
+                <input type="radio" id="volei" name="modalidade" value="volei">
+                <label for="volei">Vôlei</label>
+              </div>
+              <div class="radio-item">
+                <input type="radio" id="natacao" name="modalidade" value="natacao">
+                <label for="natacao">Natação</label>
+              </div>
+              <div class="radio-item">
+                <input type="radio" id="basquete" name="modalidade" value="basquete">
+                <label for="basquete">Basquete</label>
+              </div>
+              <div class="radio-item">
+                <input type="radio" id="tenis" name="modalidade" value="tenis">
+                <label for="tenis">Tênis</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">
+              <i class="fas fa-clock"></i>
+              Horários Disponíveis
+            </label>
+            <div class="checkbox-group">
+              <div class="checkbox-item">
+                <input type="checkbox" id="manha" name="horarios" value="manha">
+                <label for="manha">Manhã (6h-12h)</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="tarde" name="horarios" value="tarde">
+                <label for="tarde">Tarde (12h-18h)</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="noite" name="horarios" value="noite">
+                <label for="noite">Noite (18h-22h)</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">
+              <i class="fas fa-camera"></i>
+              Foto 3x4
+            </label>
+            <div class="file-input-wrapper">
+              <input type="file" id="athletePhoto" name="athletePhoto" class="file-input" accept="image/*">
+              <label for="athletePhoto" class="file-input-label">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <span>Clique para selecionar a foto</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-buttons">
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-user-plus"></i>
+              Cadastrar Atleta
+            </button>
+            <button type="reset" class="btn btn-secondary">
+              <i class="fas fa-undo"></i>
+              Limpar Cadastro
+            </button>
+          </div>
+          
+          <div class="form-success" id="sportsSuccess">
+            <i class="fas fa-check-circle"></i>
+            Cadastro realizado com sucesso!
+          </div>
+          
+          <div class="form-error" id="sportsError">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span></span>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Navegação -->
+    <nav class="navigation">
+      <a href="explicacao.html" class="nav-link">
+        <i class="fas fa-info-circle"></i>
+        Ver Explicação dos Campos
+      </a>
+    </nav>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

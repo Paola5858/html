@@ -1,171 +1,481 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Explicação dos Campos</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Quicksand&display=swap" rel="stylesheet">
-<style>
-  body {
-    margin: 0;
-    font-family: 'Quicksand', sans-serif;
-    background: #fff0f6;
-    color: #333;
-    padding: 2rem;
-    line-height: 1.6;
-  }
-  .container {
-    max-width: 800px;
-    margin: auto;
-    background: white;
-    border-radius: 14px;
-    padding: 2rem;
-    box-shadow: 0 4px 12px rgba(255,77,166,0.2);
-  }
-  h1 {
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    color: #ff4da6;
-    margin-bottom: 2rem;
-  }
-  .campo {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    border: 2px dashed #ffb3d9;
-    border-radius: 10px;
-    background: #fff9fc;
-  }
-  h2 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #e03e8c;
-    margin-bottom: 0.5rem;
-  }
-  code {
-    display: block;
-    background: #fff0f6;
-    color: #99004d;
-    padding: 0.4rem;
-    border-radius: 6px;
-    margin: 0.5rem 0;
-    font-family: monospace;
-  }
-  ul {
-    margin: 0.5rem 0 0 1.5rem;
-  }
-  .voltar {
-    display: block;
-    text-align: center;
-    margin-top: 2rem;
-  }
-  .voltar a {
-    text-decoration: none;
-    background: #ff4da6;
-    color: white;
-    padding: 0.7rem 1.5rem;
-    border-radius: 8px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    box-shadow: 0 3px 6px rgba(255,77,166,0.4);
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explicação dos Campos de Formulário</title>
+  
+  <!-- Meta Tags -->
+  <meta name="description" content="Guia completo sobre os diferentes tipos de campos de formulário e suas funcionalidades">
+  <meta name="keywords" content="formulários, HTML, campos, input, tutorial, web development">
+  <meta name="author" content="Desenvolvedor Web">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/animations.css">
+  
+  <style>
+    /* Estilos específicos para a página de explicação */
+    .explanation-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-xl);
+      position: relative;
+      z-index: 2;
+    }
+
+    .explanation-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: var(--space-xl);
+      margin-bottom: var(--space-2xl);
+    }
+
+    .explanation-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-lg);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .explanation-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-primary);
+    }
+
+    .explanation-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: var(--space-lg);
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: var(--radius-md);
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: var(--space-md);
+      color: var(--white);
+      font-size: var(--text-xl);
+    }
+
+    .card-title {
+      font-size: var(--text-xl);
+      font-weight: var(--font-semibold);
+      color: var(--gray-800);
+      margin: 0;
+    }
+
+    .card-description {
+      color: var(--gray-600);
+      margin-bottom: var(--space-lg);
+      line-height: 1.6;
+    }
+
+    .code-block {
+      background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      color: var(--gray-700);
+      position: relative;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+
+    .code-block::before {
+      content: 'HTML';
+      position: absolute;
+      top: var(--space-sm);
+      right: var(--space-sm);
+      background: var(--gradient-primary);
+      color: var(--white);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--radius-sm);
+      font-size: var(--text-xs);
+      font-weight: var(--font-semibold);
+    }
+
+    .example-demo {
+      margin-top: var(--space-md);
+      padding: var(--space-md);
+      background: var(--gray-50);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--gray-200);
+    }
+
+    .example-demo label {
+      display: block;
+      margin-bottom: var(--space-xs);
+      font-weight: var(--font-medium);
+      color: var(--gray-700);
+      font-size: var(--text-sm);
+    }
+
+    .example-demo input,
+    .example-demo select,
+    .example-demo textarea {
+      width: 100%;
+      padding: var(--space-sm) var(--space-md);
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      font-size: var(--text-sm);
+      font-family: inherit;
+    }
+
+    .example-demo input:focus,
+    .example-demo select:focus,
+    .example-demo textarea:focus {
+      outline: none;
+      border-color: var(--primary-blue);
+    }
+
+    .radio-demo,
+    .checkbox-demo {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+
+    .radio-demo label,
+    .checkbox-demo label {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      margin-bottom: 0;
+    }
+
+    .radio-demo input,
+    .checkbox-demo input {
+      width: auto;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .explanation-container {
+        padding: var(--space-md);
+      }
+      
+      .explanation-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+      
+      .explanation-card {
+        padding: var(--space-lg);
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1> explicaçãozinha dos campos</h1>
-
-    <div class="campo">
-      <h2> Texto (text)</h2>
-      <code>&lt;input type="text" name="nome"&gt;</code>
-      <ul>
-        <li><strong>Usado para:</strong> Entrada de texto simples</li>
-        <li><strong>Atributos:</strong> placeholder, required, maxlength</li>
-      </ul>
-    </div>
-
-    <div class="campo">
-      <h2> Senha (password)</h2>
-      <code>&lt;input type="password" name="senha"&gt;</code>
-      <ul>
-        <li>Oculta os caracteres digitados</li>
-        <li>Atributos extras: minlength, maxlength, required</li>
-      </ul>
-    </div>
-
-    <div class="campo">
-      <h2> E-mail (email)</h2>
-      <code>&lt;input type="email" name="email"&gt;</code>
-      <ul>
-        <li>Valida o formato de e-mail automaticamente</li>
-        <li>Atributos extras: required, placeholder</li>
-      </ul>
-    </div>
-
-    <div class="campo">
-      <h2> Número (number)</h2>
-      <code>&lt;input type="number" name="idade" min="0" max="120"&gt;</code>
-      <ul>
-        <li>Entrada numérica com controle de mínimo e máximo</li>
-      </ul>
-    </div>
-
-    <div class="campo">
-      <h2> Rádio (radio)</h2>
-      <code>&lt;input type="radio" name="genero"&gt;</code>
-      <ul>
-        <li>Permite selecionar <strong>uma opção</strong> entre várias</li>
-        <li>Usado para: gênero, escolhas únicas</li>
-      </ul>
-    </div>
-
-    <div class="campo">
-      <h2> Checkbox (checkbox)</h2>
-      <code>&lt;input type="checkbox" name="interesses"&gt;</code>
-      <ul>
-        <li>Permite marcar <strong>várias opções</strong></li>
-        <li>Usado para: interesses, preferências</li>
-      </ul>
-    </div>
-
-    <div class="campo">
-      <h2> Select (Lista suspensa)</h2>
-      <code>
-&lt;select name="cidade"&gt;<br>
-&nbsp;&nbsp;&lt;option&gt;São Paulo&lt;/option&gt;<br>
-&lt;/select&gt;
-      </code>
-      <ul>
-        <li>Lista suspensa para escolher opções</li>
-      </ul>
-    </div>
-
-    <div class="campo">
-      <h2> Arquivo (file)</h2>
-      <code>&lt;input type="file" name="arquivo"&gt;</code>
-      <ul>
-        <li>Permite upload de arquivos do dispositivo</li>
-      </ul>
-    </div>
-
-    <div class="campo">
-      <h2> Botão Submit</h2>
-      <code>&lt;button type="submit"&gt;Enviar&lt;/button&gt;</code>
-      <ul>
-        <li>Envia o formulário</li>
-      </ul>
-    </div>
-
-    <div class="campo">
-      <h2> Botão Reset</h2>
-      <code>&lt;button type="reset"&gt;Limpar&lt;/button&gt;</code>
-      <ul>
-        <li>Reseta todos os campos para vazio</li>
-      </ul>
-    </div>
-
-    <div class="voltar">
-      <a href="formulario.html">⬅ Voltar ao Formulário</a>
-    </div>
+  <!-- Elementos Flutuantes de Fundo -->
+  <div class="floating-elements">
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
   </div>
+
+  <!-- Partículas de Fundo -->
+  <div class="particles-bg"></div>
+
+  <!-- Container Principal -->
+  <div class="explanation-container">
+    <!-- Header da Página -->
+    <header class="page-header">
+      <h1 class="page-title">
+        <i class="fas fa-book-open"></i>
+        Guia de Campos de Formulário
+      </h1>
+      <p class="page-subtitle">
+        Compreenda os diferentes tipos de campos e suas funcionalidades para criar formulários eficazes e profissionais
+      </p>
+    </header>
+
+    <!-- Grid de Explicações -->
+    <div class="explanation-grid">
+      
+      <!-- Campo de Texto -->
+      <div class="explanation-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-font"></i>
+          </div>
+          <h2 class="card-title">Campo de Texto</h2>
+        </div>
+        <p class="card-description">
+          Campo fundamental para inserção de texto simples, como nomes, títulos ou qualquer informação textual básica. Ideal para dados de entrada curtos e diretos.
+        </p>
+        <div class="code-block">&lt;input type="text" placeholder="Digite seu nome" required&gt;</div>
+        <div class="example-demo">
+          <label>Exemplo:</label>
+          <input type="text" placeholder="Digite seu nome">
+        </div>
+      </div>
+
+      <!-- Campo de Senha -->
+      <div class="explanation-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <h2 class="card-title">Campo de Senha</h2>
+        </div>
+        <p class="card-description">
+          Campo especializado que oculta automaticamente os caracteres digitados, garantindo privacidade e segurança na inserção de senhas e informações confidenciais.
+        </p>
+        <div class="code-block">&lt;input type="password" placeholder="Digite sua senha"&gt;</div>
+        <div class="example-demo">
+          <label>Exemplo:</label>
+          <input type="password" placeholder="Digite sua senha">
+        </div>
+      </div>
+
+      <!-- Campo de Email -->
+      <div class="explanation-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h2 class="card-title">Campo de Email</h2>
+        </div>
+        <p class="card-description">
+          Campo inteligente que valida automaticamente o formato de endereços de email, garantindo que os dados inseridos sigam o padrão correto de comunicação eletrônica.
+        </p>
+        <div class="code-block">&lt;input type="email" placeholder="exemplo@email.com"&gt;</div>
+        <div class="example-demo">
+          <label>Exemplo:</label>
+          <input type="email" placeholder="exemplo@email.com">
+        </div>
+      </div>
+
+      <!-- Campo Numérico -->
+      <div class="explanation-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-hashtag"></i>
+          </div>
+          <h2 class="card-title">Campo Numérico</h2>
+        </div>
+        <p class="card-description">
+          Campo restrito a valores numéricos, com possibilidade de definir limites mínimos e máximos. Perfeito para idades, quantidades e valores específicos.
+        </p>
+        <div class="code-block">&lt;input type="number" min="0" max="120" placeholder="Idade"&gt;</div>
+        <div class="example-demo">
+          <label>Exemplo:</label>
+          <input type="number" min="0" max="120" placeholder="Idade">
+        </div>
+      </div>
+
+      <!-- Seletor de Data -->
+      <div class="explanation-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h2 class="card-title">Seletor de Data</h2>
+        </div>
+        <p class="card-description">
+          Interface intuitiva para seleção de datas através de um calendário interativo, facilitando a escolha precisa de datas para agendamentos e eventos.
+        </p>
+        <div class="code-block">&lt;input type="date" name="data_evento"&gt;</div>
+        <div class="example-demo">
+          <label>Exemplo:</label>
+          <input type="date">
+        </div>
+      </div>
+
+      <!-- Seletor de Horário -->
+      <div class="explanation-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h2 class="card-title">Seletor de Horário</h2>
+        </div>
+        <p class="card-description">
+          Campo especializado para escolha de horários específicos, oferecendo controle preciso sobre horas e minutos para agendamentos e cronogramas.
+        </p>
+        <div class="code-block">&lt;input type="time" name="horario"&gt;</div>
+        <div class="example-demo">
+          <label>Exemplo:</label>
+          <input type="time">
+        </div>
+      </div>
+
+      <!-- Lista Suspensa -->
+      <div class="explanation-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-list"></i>
+          </div>
+          <h2 class="card-title">Lista Suspensa</h2>
+        </div>
+        <p class="card-description">
+          Menu dropdown que apresenta múltiplas opções de forma organizada, permitindo seleção única entre alternativas predefinidas de maneira elegante.
+        </p>
+        <div class="code-block">&lt;select name="categoria"&gt;
+  &lt;option value="opcao1"&gt;Primeira Opção&lt;/option&gt;
+  &lt;option value="opcao2"&gt;Segunda Opção&lt;/option&gt;
+&lt;/select&gt;</div>
+        <div class="example-demo">
+          <label>Exemplo:</label>
+          <select>
+            <option>Primeira Opção</option>
+            <option>Segunda Opção</option>
+            <option>Terceira Opção</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Botões de Opção -->
+      <div class="explanation-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-dot-circle"></i>
+          </div>
+          <h2 class="card-title">Botões de Opção</h2>
+        </div>
+        <p class="card-description">
+          Elementos que permitem seleção exclusiva dentro de um grupo de opções. Ideal quando apenas uma escolha é permitida entre várias alternativas relacionadas.
+        </p>
+        <div class="code-block">&lt;input type="radio" name="turno" value="manha"&gt; Manhã
+&lt;input type="radio" name="turno" value="tarde"&gt; Tarde</div>
+        <div class="example-demo">
+          <label>Exemplo:</label>
+          <div class="radio-demo">
+            <label><input type="radio" name="exemplo1" value="manha"> Manhã</label>
+            <label><input type="radio" name="exemplo1" value="tarde"> Tarde</label>
+            <label><input type="radio" name="exemplo1" value="noite"> Noite</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Caixas de Seleção -->
+      <div class="explanation-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-check-square"></i>
+          </div>
+          <h2 class="card-title">Caixas de Seleção</h2>
+        </div>
+        <p class="card-description">
+          Campos que permitem seleção múltipla simultânea, oferecendo flexibilidade para escolher várias opções independentes dentro de um mesmo contexto.
+        </p>
+        <div class="code-block">&lt;input type="checkbox" value="opcao1"&gt; Primeira Opção
+&lt;input type="checkbox" value="opcao2"&gt; Segunda Opção</div>
+        <div class="example-demo">
+          <label>Exemplo:</label>
+          <div class="checkbox-demo">
+            <label><input type="checkbox" value="opcao1"> Opção 1</label>
+            <label><input type="checkbox" value="opcao2"> Opção 2</label>
+            <label><input type="checkbox" value="opcao3"> Opção 3</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upload de Arquivo -->
+      <div class="explanation-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-file-upload"></i>
+          </div>
+          <h2 class="card-title">Upload de Arquivo</h2>
+        </div>
+        <p class="card-description">
+          Interface para seleção e envio de arquivos do dispositivo do usuário, suportando diversos formatos e facilitando o compartilhamento de documentos.
+        </p>
+        <div class="code-block">&lt;input type="file" accept=".pdf,.jpg,.png" multiple&gt;</div>
+        <div class="example-demo">
+          <label>Exemplo:</label>
+          <input type="file" accept=".pdf,.jpg,.png">
+        </div>
+      </div>
+
+      <!-- Área de Texto -->
+      <div class="explanation-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-align-left"></i>
+          </div>
+          <h2 class="card-title">Área de Texto</h2>
+        </div>
+        <p class="card-description">
+          Campo expandido para inserção de textos longos e detalhados, como comentários, descrições ou mensagens extensas que requerem mais espaço.
+        </p>
+        <div class="code-block">&lt;textarea rows="4" cols="50" placeholder="Sua mensagem..."&gt;
+&lt;/textarea&gt;</div>
+        <div class="example-demo">
+          <label>Exemplo:</label>
+          <textarea rows="3" placeholder="Sua mensagem..."></textarea>
+        </div>
+      </div>
+
+      <!-- Botão de Envio -->
+      <div class="explanation-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-paper-plane"></i>
+          </div>
+          <h2 class="card-title">Botão de Envio</h2>
+        </div>
+        <p class="card-description">
+          Elemento de ação que processa e submete todos os dados do formulário para o servidor, iniciando o processamento das informações coletadas.
+        </p>
+        <div class="code-block">&lt;button type="submit"&gt;
+  &lt;i class="fas fa-paper-plane"&gt;&lt;/i&gt; Enviar Formulário
+&lt;/button&gt;</div>
+        <div class="example-demo">
+          <button type="button" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer;">
+            <i class="fas fa-paper-plane"></i> Enviar Formulário
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navegação -->
+    <nav class="navigation">
+      <a href="index.html" class="nav-link">
+        <i class="fas fa-arrow-left"></i>
+        Voltar aos Formulários
+      </a>
+    </nav>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
 </body>
 </html>
