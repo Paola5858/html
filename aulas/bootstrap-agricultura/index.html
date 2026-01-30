@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap na agricultura</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="bg-light py-4">
+        <div class="container">
+            <h1 class="text-center mb-0">bootstrap na agricultura</h1>
+            <p class="text-center text-muted">aprendendo bootstrap com um toque agrícola</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section id="paleta-cores" class="mb-5">
+            <h2 class="text-center mb-4">paleta de cores do bootstrap</h2>
+            <div class="row g-4">
+                <div class="col-md-4 col-sm-6">
+                    <div class="color-card bg-success text-white p-4 rounded shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="cor de sucesso, ideal para ações positivas como confirmações">
+                        <h5>success</h5>
+                        <p>usada para indicar sucesso ou ações positivas</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="color-card bg-primary text-white p-4 rounded shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="cor primária, para elementos principais como botões de ação">
+                        <h5>primary</h5>
+                        <p>cor principal do site, para destaques</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="color-card bg-warning text-dark p-4 rounded shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="cor de aviso, para alertas ou atenções necessárias">
+                        <h5>warning</h5>
+                        <p>usada para avisos ou atenção</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="color-card bg-dark text-white p-4 rounded shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="cor escura, para textos ou fundos contrastantes">
+                        <h5>dark</h5>
+                        <p>cor escura para contraste</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="color-card bg-secondary text-white p-4 rounded shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="cor secundária, para elementos complementares">
+                        <h5>secondary</h5>
+                        <p>cor secundária para complementos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="componentes">
+            <h2 class="text-center mb-4">componentes do bootstrap</h2>
+            <div class="row g-4">
+                <div class="col-lg-6 col-md-12">
+                    <div class="component-card card shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title">navbar</h5>
+                            <p class="card-text">barra de navegação para menus</p>
+                            <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+                                <div class="container-fluid">
+                                    <a class="navbar-brand" href="#">agricultura</a>
+                                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="navbarNav">
+                                        <ul class="navbar-nav">
+                                            <li class="nav-item"><a class="nav-link" href="#">início</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">sobre</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">contato</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="component-card card shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title">cards</h5>
+                            <p class="card-text">cartões para exibir conteúdo</p>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title">exemplo de card</h6>
+                                    <p class="card-text">este é um card simples para mostrar informações.</p>
+                                    <button class="btn btn-primary">saiba mais</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="component-card card shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title">buttons</h5>
+                            <p class="card-text">botões para interações</p>
+                            <button class="btn btn-success me-2">sucesso</button>
+                            <button class="btn btn-warning me-2">aviso</button>
+                            <button class="btn btn-danger">perigo</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="component-card card shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title">alerts</h5>
+                            <p class="card-text">alertas para mensagens</p>
+                            <div class="alert alert-info" role="alert">
+                                esta é uma mensagem de informação.
+                            </div>
+                            <div class="alert alert-success" role="alert">
+                                operação realizada com sucesso!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="component-card card shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title">tables</h5>
+                            <p class="card-text">tabelas para dados organizados</p>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>produto</th>
+                                        <th>quantidade</th>
+                                        <th>preço</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>milho</td>
+                                        <td>100 kg</td>
+                                        <td>r$ 50,00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>soja</td>
+                                        <td>200 kg</td>
+                                        <td>r$ 80,00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-light py-3 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">feito com carinho para aprender bootstrap</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
