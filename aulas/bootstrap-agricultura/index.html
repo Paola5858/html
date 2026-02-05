@@ -3,161 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="aprendendo bootstrap com um toque agrícola - atividade acadêmica de paola soares">
+    <meta name="author" content="Paola Soares">
     <title>bootstrap na agricultura</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-new.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="bg-light py-4">
+    <!-- Loader -->
+    <div id="loader" class="loader">
+        <div class="spinner-clay"></div>
+        <p>carregando com carinho...</p>
+    </div>
+    
+    <!-- Scroll Progress -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <!-- Sidebar Mobile -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>navegação</h3>
+            <button class="sidebar-close" onclick="closeSidebar()">&times;</button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#paleta-cores" onclick="closeSidebar()">🎨 paleta de cores</a>
+            <a href="#componentes" onclick="closeSidebar()">🧩 componentes</a>
+        </nav>
+    </div>
+    
+    <header class="header-modern">
         <div class="container">
-            <h1 class="text-center mb-0">bootstrap na agricultura</h1>
-            <p class="text-center text-muted">aprendendo bootstrap com um toque agrícola</p>
+            <div class="header-content">
+                <button class="hamburger" onclick="toggleSidebar()" aria-label="menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="header-title">
+                    <h1 class="mb-0">bootstrap na agricultura</h1>
+                    <p class="header-subtitle">aprendendo com um toque agrícola</p>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="alternar tema">
+                    <div class="theme-morph">
+                        <span class="theme-icon">🌞</span>
+                    </div>
+                </button>
+            </div>
         </div>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-elements">
+            <div class="floating-element" data-speed="0.5">🌱</div>
+            <div class="floating-element" data-speed="0.3">🌾</div>
+            <div class="floating-element" data-speed="0.7">🍃</div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-emoji" id="tractor-emoji">🚜</div>
+                <h1 class="hero-title">olá, mundo agrícola! 🌾</h1>
+                <p class="hero-subtitle">descobrindo como o bootstrap deixa tudo mais verde e produtivo</p>
+                <div class="scroll-indicator">
+                    <span>role pra baixo</span>
+                    <div class="chevron"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <main class="container my-5">
         <section id="paleta-cores" class="mb-5">
-            <h2 class="text-center mb-4">paleta de cores do bootstrap</h2>
-            <div class="row g-4">
-                <div class="col-md-4 col-sm-6">
-                    <div class="color-card bg-success text-white p-4 rounded shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="cor de sucesso, ideal para ações positivas como confirmações">
-                        <h5>success</h5>
-                        <p>usada para indicar sucesso ou ações positivas</p>
+            <div class="section-header">
+                <h2 class="section-title">paleta de cores do bootstrap</h2>
+                <p class="section-subtitle">cinco cores que contam a história da agricultura</p>
+            </div>
+            
+            <div class="palette-container">
+                <div class="color-bubble" data-color="success" data-hex="#198754">
+                    <div class="bubble-content">
+                        <span class="color-name">verde</span>
+                        <span class="color-code">#198754</span>
+                    </div>
+                    <div class="color-tooltip">
+                        <h4>verde success</h4>
+                        <p>essa cor foi escolhida porque lembra natureza, crescimento e confiança. agricultor vê verde e pensa "tá bom"</p>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="color-card bg-primary text-white p-4 rounded shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="cor primária, para elementos principais como botões de ação">
-                        <h5>primary</h5>
-                        <p>cor principal do site, para destaques</p>
+                
+                <div class="color-bubble" data-color="info" data-hex="#0dcaf0">
+                    <div class="bubble-content">
+                        <span class="color-name">água</span>
+                        <span class="color-code">#0dcaf0</span>
+                    </div>
+                    <div class="color-tooltip">
+                        <h4>verde claro / água</h4>
+                        <p>transmite frescor e informação clara, como água limpa de um rio. perfeita para dados e avisos suaves</p>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="color-card bg-warning text-dark p-4 rounded shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="cor de aviso, para alertas ou atenções necessárias">
-                        <h5>warning</h5>
-                        <p>usada para avisos ou atenção</p>
+                
+                <div class="color-bubble" data-color="warning" data-hex="#ffc107">
+                    <div class="bubble-content">
+                        <span class="color-name">sol</span>
+                        <span class="color-code">#ffc107</span>
+                    </div>
+                    <div class="color-tooltip">
+                        <h4>amarelo warning</h4>
+                        <p>chama atenção sem assustar. como o sol da manhã, avisa que algo precisa de cuidado</p>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="color-card bg-dark text-white p-4 rounded shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="cor escura, para textos ou fundos contrastantes">
-                        <h5>dark</h5>
-                        <p>cor escura para contraste</p>
+                
+                <div class="color-bubble" data-color="terroso" data-hex="#fd7e14">
+                    <div class="bubble-content">
+                        <span class="color-name">terra</span>
+                        <span class="color-code">#fd7e14</span>
+                    </div>
+                    <div class="color-tooltip">
+                        <h4>marrom terroso</h4>
+                        <p>cor da terra fértil, raízes profundas. lembra solo rico e colheitas abundantes</p>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="color-card bg-secondary text-white p-4 rounded shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="cor secundária, para elementos complementares">
-                        <h5>secondary</h5>
-                        <p>cor secundária para complementos</p>
+                
+                <div class="color-bubble" data-color="light" data-hex="#f8f9fa">
+                    <div class="bubble-content">
+                        <span class="color-name">nuvem</span>
+                        <span class="color-code">#f8f9fa</span>
+                    </div>
+                    <div class="color-tooltip">
+                        <h4>cinza claro</h4>
+                        <p>fundo neutro e limpo, como céu nublado mas tranquilo. dá espaço para as outras cores brilharem</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="componentes">
-            <h2 class="text-center mb-4">componentes do bootstrap</h2>
-            <div class="row g-4">
-                <div class="col-lg-6 col-md-12">
-                    <div class="component-card card shadow-sm border-0">
-                        <div class="card-body">
-                            <h5 class="card-title">navbar</h5>
-                            <p class="card-text">barra de navegação para menus</p>
-                            <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
-                                <div class="container-fluid">
-                                    <a class="navbar-brand" href="#">agricultura</a>
-                                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                                        <span class="navbar-toggler-icon"></span>
-                                    </button>
-                                    <div class="collapse navbar-collapse" id="navbarNav">
-                                        <ul class="navbar-nav">
-                                            <li class="nav-item"><a class="nav-link" href="#">início</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="#">sobre</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="#">contato</a></li>
-                                        </ul>
-                                    </div>
+            <div class="section-header">
+                <h2 class="section-title">componentes do bootstrap</h2>
+                <p class="section-subtitle">cinco ferramentas que fazem a diferença no campo digital</p>
+            </div>
+            
+            <div class="components-grid">
+                <div class="component-card" data-component="navbar" data-color="success">
+                    <div class="card-icon">🧭</div>
+                    <div class="card-content">
+                        <h3>navbar</h3>
+                        <p>barra de navegação que guia como uma bússola no campo</p>
+                        <button class="interact-btn" onclick="showComponent('navbar')">
+                            <span>explorar</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                    </div>
+                    <div class="component-demo" id="navbar-demo">
+                        <nav class="navbar navbar-expand-lg" style="background: linear-gradient(135deg, #198754, #20c997); border-radius: 12px;">
+                            <div class="container-fluid">
+                                <a class="navbar-brand text-white fw-bold" href="#">🚜 agrotech</a>
+                                <div class="navbar-nav ms-auto">
+                                    <a class="nav-link text-white" href="#">dashboard</a>
+                                    <a class="nav-link text-white" href="#">máquinas</a>
+                                    <a class="nav-link text-white" href="#">relatórios</a>
                                 </div>
-                            </nav>
-                        </div>
+                            </div>
+                        </nav>
+                        <p class="demo-explanation">navbar responsivo com gradiente verde. organiza navegação de forma intuitiva.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="component-card card shadow-sm border-0">
-                        <div class="card-body">
-                            <h5 class="card-title">cards</h5>
-                            <p class="card-text">cartões para exibir conteúdo</p>
-                            <div class="card">
+
+                <div class="component-card" data-component="cards" data-color="info">
+                    <div class="card-icon">📋</div>
+                    <div class="card-content">
+                        <h3>cards</h3>
+                        <p>cartões que organizam informação como fichas de plantio</p>
+                        <button class="interact-btn" onclick="showComponent('cards')">
+                            <span>explorar</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                    </div>
+                    <div class="component-demo" id="cards-demo">
+                        <div class="demo-cards">
+                            <div class="card border-0" style="background: linear-gradient(135deg, #0dcaf0, #20c997); color: white; border-radius: 16px;">
                                 <div class="card-body">
-                                    <h6 class="card-title">exemplo de card</h6>
-                                    <p class="card-text">este é um card simples para mostrar informações.</p>
-                                    <button class="btn btn-primary">saiba mais</button>
+                                    <h6 class="card-title mb-1">colheitadeira 01</h6>
+                                    <p class="card-text mb-2" style="font-size: 1.5rem; font-weight: 700;">78%</p>
+                                    <small>combustível disponível</small>
                                 </div>
                             </div>
                         </div>
+                        <p class="demo-explanation">cards com gradiente organizam dados de forma visual e atrativa.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="component-card card shadow-sm border-0">
-                        <div class="card-body">
-                            <h5 class="card-title">buttons</h5>
-                            <p class="card-text">botões para interações</p>
-                            <button class="btn btn-success me-2">sucesso</button>
-                            <button class="btn btn-warning me-2">aviso</button>
-                            <button class="btn btn-danger">perigo</button>
+
+                <div class="component-card" data-component="buttons" data-color="warning">
+                    <div class="card-icon">🎯</div>
+                    <div class="card-content">
+                        <h3>buttons</h3>
+                        <p>botões grandes e claros, feitos para usar até com luva</p>
+                        <button class="interact-btn" onclick="showComponent('buttons')">
+                            <span>explorar</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                    </div>
+                    <div class="component-demo" id="buttons-demo">
+                        <div class="demo-buttons">
+                            <button class="btn btn-success btn-lg me-2 mb-2">✓ iniciar</button>
+                            <button class="btn btn-warning btn-lg me-2 mb-2">⚠ cuidado</button>
+                            <button class="btn btn-danger btn-lg mb-2">✕ parar</button>
                         </div>
+                        <p class="demo-explanation">botões grandes com ícones facilitam uso no campo. cores comunicam ação.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="component-card card shadow-sm border-0">
-                        <div class="card-body">
-                            <h5 class="card-title">alerts</h5>
-                            <p class="card-text">alertas para mensagens</p>
-                            <div class="alert alert-info" role="alert">
-                                esta é uma mensagem de informação.
-                            </div>
-                            <div class="alert alert-success" role="alert">
-                                operação realizada com sucesso!
-                            </div>
+
+                <div class="component-card" data-component="alerts" data-color="terroso">
+                    <div class="card-icon">📢</div>
+                    <div class="card-content">
+                        <h3>alerts</h3>
+                        <p>avisos importantes que chegam na hora certa</p>
+                        <button class="interact-btn" onclick="showComponent('alerts')">
+                            <span>explorar</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                    </div>
+                    <div class="component-demo" id="alerts-demo">
+                        <div class="alert alert-success border-0" style="background: linear-gradient(135deg, #198754, #20c997); color: white; border-radius: 12px;">
+                            ✅ safra colhida com sucesso - produtividade acima da média!
                         </div>
+                        <div class="alert alert-warning border-0" style="background: linear-gradient(135deg, #ffc107, #ffca2c); color: #333; border-radius: 12px;">
+                            ⚠️ manutenção programada em 2 dias
+                        </div>
+                        <p class="demo-explanation">alerts com gradiente chamam atenção sem assustar. cores indicam urgência.</p>
                     </div>
                 </div>
-                <div class="col-12">
-                    <div class="component-card card shadow-sm border-0">
-                        <div class="card-body">
-                            <h5 class="card-title">tables</h5>
-                            <p class="card-text">tabelas para dados organizados</p>
-                            <table class="table table-striped">
-                                <thead>
+
+                <div class="component-card component-card-wide" data-component="tables" data-color="light">
+                    <div class="card-icon">📊</div>
+                    <div class="card-content">
+                        <h3>tables</h3>
+                        <p>tabelas que organizam dados como planilha de safra</p>
+                        <button class="interact-btn" onclick="showComponent('tables')">
+                            <span>explorar</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                    </div>
+                    <div class="component-demo" id="tables-demo">
+                        <div class="table-responsive">
+                            <table class="table table-hover border-0" style="border-radius: 12px; overflow: hidden;">
+                                <thead style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
                                     <tr>
-                                        <th>produto</th>
-                                        <th>quantidade</th>
-                                        <th>preço</th>
+                                        <th>🌽 produto</th>
+                                        <th>📦 estoque</th>
+                                        <th>💰 preço</th>
+                                        <th>📊 status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>milho</td>
                                         <td>100 kg</td>
-                                        <td>r$ 50,00</td>
+                                        <td>r$ 2,50</td>
+                                        <td><span class="badge" style="background: #198754;">disponível</span></td>
                                     </tr>
                                     <tr>
                                         <td>soja</td>
                                         <td>200 kg</td>
-                                        <td>r$ 80,00</td>
+                                        <td>r$ 4,00</td>
+                                        <td><span class="badge" style="background: #ffc107; color: #333;">baixo</span></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
+                        <p class="demo-explanation">table-hover destaca linha ao passar mouse. badges coloridas indicam status.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-light py-3 mt-5">
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="copyToast" class="toast border-0" role="alert" style="background: linear-gradient(135deg, #198754, #20c997); color: white; border-radius: 12px;">
+            <div class="toast-body">
+                ✨ cor copiada com carinho!
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer-modern">
         <div class="container text-center">
-            <p class="mb-0">feito com carinho para aprender bootstrap</p>
+            <div class="footer-content">
+                <p class="footer-signature">feito com 💚 e código limpo por paola soares</p>
+                <small class="footer-info">atividade acadêmica - senai | prof. fabiano</small>
+                <div class="footer-decoration">
+                    <span>🌱</span>
+                    <span>🚜</span>
+                    <span>🌾</span>
+                </div>
+            </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script-new.js"></script>
 </body>
 </html>
