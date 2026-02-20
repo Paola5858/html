@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>me conhecendo um pouquinho</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-start: #0a0e14;
+    --bg-end: #1a1f2e;
+    --glass-bg: rgba(255, 255, 255, 0.02);
+    --glass-border: rgba(255, 255, 255, 0.06);
+    --text-primary: #e8eaed;
+    --text-secondary: #9aa0a6;
+    --accent-livros: #6366f1;
+    --accent-filmes: #7f1d1d;
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    padding: 5rem 2rem 3rem;
+    line-height: 1.7;
+    letter-spacing: -0.01em;
+}
+
+.container { max-width: 920px; }
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    letter-spacing: -0.8px;
+    margin-bottom: 2.5rem;
+    line-height: 1.2;
+}
+
+h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid var(--glass-border);
+    border-radius: 28px;
+    padding: 4rem;
+    box-shadow: 0 12px 48px var(--shadow);
+    margin-bottom: 3rem;
+}
+
+.mode-toggle {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    padding: 0.5rem;
+    background: var(--glass-bg);
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mode-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 0.8rem 2rem;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mode-btn:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.mode-btn.active-livros {
+    background: var(--accent-livros);
+    color: white;
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+}
+
+.mode-btn.active-filmes {
+    background: var(--accent-filmes);
+    color: white;
+    box-shadow: 0 4px 16px rgba(127, 29, 29, 0.3);
+}
+
+.filter-group {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    padding: 0.7rem 1.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--shadow);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.filter-btn.active-livros {
+    background: var(--accent-livros);
+    color: white;
+    border-color: var(--accent-livros);
+}
+
+.filter-btn.active-filmes {
+    background: var(--accent-filmes);
+    color: white;
+    border-color: var(--accent-filmes);
+}
+
+.table {
+    color: var(--text-primary);
+    border: none;
+    margin-bottom: 0;
+}
+
+.table thead th {
+    border: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-secondary);
+    padding: 1.5rem 1.2rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.table tbody tr.item-row {
+    border: none;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.table tbody tr.item-row:hover {
+    background: rgba(255, 255, 255, 0.03);
+    transform: translateX(6px);
+}
+
+.table tbody tr.item-row.expanded {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.table tbody td {
+    border: none;
+    padding: 1.8rem 1.2rem;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.table tbody tr.expansion-row {
+    border: none;
+}
+
+.table tbody tr.expansion-row td {
+    padding: 0;
+    border: none;
+}
+
+.badge-tema {
+    color: white;
+    border-radius: 14px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    display: inline-block;
+}
+
+.badge-livros { background: var(--accent-livros); }
+.badge-filmes { background: var(--accent-filmes); }
+
+.expansion {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.expansion.open {
+    max-height: 600px;
+}
+
+.expansion-content {
+    padding: 2rem 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    font-size: 0.95rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.section-text {
+    line-height: 1.9;
+    font-size: 0.96rem;
+    color: var(--text-secondary);
+}
+
+.section-text p {
+    margin-bottom: 2rem;
+}
+
+.section-text strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+    margin: 3rem 0;
+}
+
+code {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    color: var(--accent-livros);
+    font-family: 'Consolas', monospace;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tech-item {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+.tech-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+    transform: translateY(-4px);
+}
+
+.tech-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.tech-item p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+footer {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.d-none { display: none !important; }
+
+@media (max-width: 768px) {
+    body { padding: 3rem 1.5rem; }
+    .glass { padding: 2.5rem 2rem; }
+    h1 { font-size: 2.5rem; }
+    .filter-group { gap: 0.5rem; }
+    .tech-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="text-center fade-scroll" style="margin-bottom: 4rem;">
+        <h1>me conhecendo um pouquinho</h1>
+        <p style="color: var(--text-secondary); font-size: 1.15rem;">estruturas invisíveis que moldam pensamento e comportamento</p>
+    </div>
+
+    <div class="mode-toggle fade-scroll">
+        <button class="mode-btn active-livros" onclick="alternarModo('livros')">livros</button>
+        <button class="mode-btn" onclick="alternarModo('filmes')">filmes</button>
+    </div>
+
+    <div class="filter-group fade-scroll" id="filtros-livros">
+        <button class="filter-btn active-livros" onclick="filtrar('todos', 'livros')">todos</button>
+        <button class="filter-btn" onclick="filtrar('controle', 'livros')">controle</button>
+        <button class="filter-btn" onclick="filtrar('moral', 'livros')">moral</button>
+        <button class="filter-btn" onclick="filtrar('político', 'livros')">político</button>
+    </div>
+
+    <div class="filter-group fade-scroll d-none" id="filtros-filmes">
+        <button class="filter-btn active-filmes" onclick="filtrar('todos', 'filmes')">todos</button>
+        <button class="filter-btn" onclick="filtrar('identidade', 'filmes')">identidade</button>
+        <button class="filter-btn" onclick="filtrar('psicologia', 'filmes')">psicologia</button>
+        <button class="filter-btn" onclick="filtrar('poder', 'filmes')">poder</button>
+    </div>
+
+    <div class="glass fade-scroll" id="secao-livros">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>obra</th>
+                        <th>autor</th>
+                        <th>páginas</th>
+                        <th>eixo</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-livros">
+                    <tr class="item-row" data-eixo="controle" onclick="expandir(this, '1984', 'livros')">
+                        <td><strong>1984</strong></td>
+                        <td>george orwell</td>
+                        <td>328</td>
+                        <td><span class="badge-tema badge-livros">controle e linguagem</span></td>
+                    </tr>
+                    <tr class="expansion-row"><td colspan="4"><div class="expansion"><div class="expansion-content"></div></div></td></tr>
+                    
+                    <tr class="item-row" data-eixo="controle" onclick="expandir(this, 'admiravel', 'livros')">
+                        <td><strong>admirável mundo novo</strong></td>
+                        <td>aldous huxley</td>
+                        <td>288</td>
+                        <td><span class="badge-tema badge-livros">engenharia social</span></td>
+                    </tr>
+                    <tr class="expansion-row"><td colspan="4"><div class="expansion"><div class="expansion-content"></div></div></td></tr>
+                    
+                    <tr class="item-row" data-eixo="moral" onclick="expandir(this, 'crime', 'livros')">
+                        <td><strong>crime e castigo</strong></td>
+                        <td>fiódor dostoiévski</td>
+                        <td>576</td>
+                        <td><span class="badge-tema badge-livros">moral e culpa</span></td>
+                    </tr>
+                    <tr class="expansion-row"><td colspan="4"><div class="expansion"><div class="expansion-content"></div></div></td></tr>
+                    
+                    <tr class="item-row" data-eixo="político" onclick="expandir(this, 'principe', 'livros')">
+                        <td><strong>o príncipe</strong></td>
+                        <td>maquiavel</td>
+                        <td>100</td>
+                        <td><span class="badge-tema badge-livros">realismo político</span></td>
+                    </tr>
+                    <tr class="expansion-row"><td colspan="4"><div class="expansion"><div class="expansion-content"></div></div></td></tr>
+                    
+                    <tr class="item-row" data-eixo="controle" onclick="expandir(this, 'fahrenheit', 'livros')">
+                        <td><strong>fahrenheit 451</strong></td>
+                        <td>ray bradbury</td>
+                        <td>160</td>
+                        <td><span class="badge-tema badge-livros">anti-intelectualismo</span></td>
+                    </tr>
+                    <tr class="expansion-row"><td colspan="4"><div class="expansion"><div class="expansion-content"></div></div></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="glass fade-scroll d-none" id="secao-filmes">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>filme</th>
+                        <th>diretor</th>
+                        <th>onde assistir</th>
+                        <th>eixo</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-filmes">
+                    <tr class="item-row" data-eixo="identidade" onclick="expandir(this, 'clube', 'filmes')">
+                        <td><strong>clube da luta</strong></td>
+                        <td>david fincher</td>
+                        <td>star+</td>
+                        <td><span class="badge-tema badge-filmes">identidade e sistema</span></td>
+                    </tr>
+                    <tr class="expansion-row"><td colspan="4"><div class="expansion"><div class="expansion-content"></div></div></td></tr>
+                    
+                    <tr class="item-row" data-eixo="psicologia" onclick="expandir(this, 'borboleta', 'filmes')">
+                        <td><strong>efeito borboleta</strong></td>
+                        <td>eric bress</td>
+                        <td>prime video</td>
+                        <td><span class="badge-tema badge-filmes">responsabilidade</span></td>
+                    </tr>
+                    <tr class="expansion-row"><td colspan="4"><div class="expansion"><div class="expansion-content"></div></div></td></tr>
+                    
+                    <tr class="item-row" data-eixo="poder" onclick="expandir(this, 'vinganca', 'filmes')">
+                        <td><strong>v de vingança</strong></td>
+                        <td>james mcteigue</td>
+                        <td>max</td>
+                        <td><span class="badge-tema badge-filmes">ideias e poder</span></td>
+                    </tr>
+                    <tr class="expansion-row"><td colspan="4"><div class="expansion"><div class="expansion-content"></div></div></td></tr>
+                    
+                    <tr class="item-row" data-eixo="psicologia" onclick="expandir(this, 'cisne', 'filmes')">
+                        <td><strong>cisne negro</strong></td>
+                        <td>darren aronofsky</td>
+                        <td>netflix</td>
+                        <td><span class="badge-tema badge-filmes">psicologia e perfeição</span></td>
+                    </tr>
+                    <tr class="expansion-row"><td colspan="4"><div class="expansion"><div class="expansion-content"></div></div></td></tr>
+                    
+                    <tr class="item-row" data-eixo="psicologia" onclick="expandir(this, 'origem', 'filmes')">
+                        <td><strong>a origem</strong></td>
+                        <td>christopher nolan</td>
+                        <td>max</td>
+                        <td><span class="badge-tema badge-filmes">memória e culpa</span></td>
+                    </tr>
+                    <tr class="expansion-row"><td colspan="4"><div class="expansion"><div class="expansion-content"></div></div></td></tr>
+                    
+                    <tr class="item-row" data-eixo="psicologia" onclick="expandir(this, 'whiplash', 'filmes')">
+                        <td><strong>whiplash</strong></td>
+                        <td>damien chazelle</td>
+                        <td>prime video</td>
+                        <td><span class="badge-tema badge-filmes">excelência e limite</span></td>
+                    </tr>
+                    <tr class="expansion-row"><td colspan="4"><div class="expansion"><div class="expansion-content"></div></div></td></tr>
+                    
+                    <tr class="item-row" data-eixo="poder" onclick="expandir(this, 'machina', 'filmes')">
+                        <td><strong>ex machina</strong></td>
+                        <td>alex garland</td>
+                        <td>netflix</td>
+                        <td><span class="badge-tema badge-filmes">consciência e controle</span></td>
+                    </tr>
+                    <tr class="expansion-row"><td colspan="4"><div class="expansion"><div class="expansion-content"></div></div></td></tr>
+                    
+                    <tr class="item-row" data-eixo="identidade" onclick="expandir(this, 'poetas', 'filmes')">
+                        <td><strong>sociedade dos poetas mortos</strong></td>
+                        <td>peter weir</td>
+                        <td>star+</td>
+                        <td><span class="badge-tema badge-filmes">individualidade</span></td>
+                    </tr>
+                    <tr class="expansion-row"><td colspan="4"><div class="expansion"><div class="expansion-content"></div></div></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="glass fade-scroll">
+        <h2>análise técnica do projeto</h2>
+        <div class="section-text">
+            <p>este projeto não é apenas uma tabela estilizada. é um exercício de design thinking aplicado a estrutura semântica, onde cada decisão técnica serve a um propósito conceitual e funcional.</p>
+        </div>
+        
+        <div class="tech-grid">
+            <div class="tech-item">
+                <h4>table-responsive</h4>
+                <p>garante que a tabela funcione em dispositivos móveis sem quebrar o layout. em telas pequenas, adiciona scroll horizontal mantendo a hierarquia visual intacta.</p>
+            </div>
+            
+            <div class="tech-item">
+                <h4>badges customizadas</h4>
+                <p>uso badges do bootstrap como base semântica, mas sobrescrevo o estilo para criar identidade própria. cada eixo temático tem cor específica que reforça a categorização visual.</p>
+            </div>
+            
+            <div class="tech-item">
+                <h4>container centralizado</h4>
+                <p>limita a largura máxima do conteúdo para manter legibilidade ideal. o olho humano processa melhor textos com 60-80 caracteres por linha.</p>
+            </div>
+            
+            <div class="tech-item">
+                <h4>glassmorphism</h4>
+                <p>backdrop-filter cria profundidade sem peso visual. o efeito de vidro fosco adiciona sofisticação e separa camadas de informação sem usar bordas pesadas.</p>
+            </div>
+            
+            <div class="tech-item">
+                <h4>hierarquia tipográfica</h4>
+                <p>uso clamp() para tipografia fluida que escala proporcionalmente. letter-spacing negativo em títulos grandes cria coesão visual, técnica comum em design editorial.</p>
+            </div>
+            
+            <div class="tech-item">
+                <h4>transições cubic-bezier</h4>
+                <p>curvas de aceleração customizadas criam movimento mais natural. cubic-bezier(0.16, 1, 0.3, 1) produz efeito de "mola suave" que parece orgânico.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="glass fade-scroll">
+        <h2>sobre a curadoria</h2>
+        <div class="section-text">
+            <p>escolhi essas obras porque todas elas operam em camadas. não são entretenimento passivo, são dissecações de sistemas — sejam eles políticos, psicológicos, morais ou sociais.</p>
+            <p>o que me interessa não é a história superficial, mas a estrutura invisível por trás dela. como linguagem molda pensamento. como prazer pode ser ferramenta de controle. como consciência individual entra em conflito com pressão coletiva.</p>
+            <p>este projeto também é sobre estrutura. não queria apenas listar livros e filmes. queria criar uma interface que refletisse o tema: algo que parece simples na superfície, mas tem camadas de decisão técnica e conceitual embaixo.</p>
+        </div>
+    </div>
+</div>
+
+<footer class="fade-scroll">
+    feito com muito carinho por mim - paola machado
+</footer>
+
+<script>
+const conteudo = {
+    livros: {
+        '1984': 'esse livro me assusta porque não é ficção distante. quando orwell mostra como reduzir vocabulário limita pensamento, eu reconheço isso acontecendo agora. a gente perde palavras, perde nuances, e sem perceber aceita versões simplificadas da realidade. me fez questionar quantas vezes eu repito narrativas prontas sem examinar de onde vieram. controle não precisa de violência quando consegue moldar como você pensa antes mesmo de formar a ideia.',
+        'admiravel': 'o que me incomoda nesse livro não é a distopia, é o conforto dela. ninguém é forçado a nada, as pessoas escolhem o superficial porque é mais fácil. isso me faz pensar: quantas vezes eu escolho entretenimento vazio ao invés de algo que me desafia? o livro não julga, mas expõe. e essa exposição é desconfortável porque mostra que talvez a gente esteja construindo esse mundo voluntariamente, um clique de cada vez.',
+        'crime': 'raskolnikov acredita que sua inteligência o coloca acima das regras. eu já pensei assim. não no extremo dele, mas na arrogância de achar que entender algo te isenta das consequências. o livro é brutal porque mostra que racionalizar não apaga culpa. a tensão não é externa, é interna. e isso me interessa: até onde a lógica sustenta uma decisão quando a consciência começa a cobrar? spoiler: não sustenta.',
+        'principe': 'maquiavel não romantiza poder, ele descreve. e isso incomoda porque desmonta a ilusão de que política funciona por bondade. ler isso não me fez cínica, me fez realista. entender como poder opera não significa idolatrá-lo, significa parar de ser ingênua. prefiro saber como o jogo funciona do que fingir que ele não existe. esse livro não ensina maldade, ensina clareza.',
+        'fahrenheit': 'o que me marcou não foi a censura, foi a indiferença. as pessoas não querem livros porque preferem não pensar. e eu vejo isso: a fuga constante para o raso, o medo do desconforto intelectual. não é sobre governo queimando livros, é sobre ninguém querer lê-los. isso me faz questionar quantas vezes eu mesma fujo de reflexão profunda porque é cansativo. o livro não acusa, mas espelha.'
+    },
+    filmes: {
+        'clube': 'tyler durden fala o que muita gente pensa mas não admite: que a vida moderna vende identidade pronta e a gente compra sem questionar. o filme me provocou porque mostra que rebeldia performática pode ser só outro tipo de conformismo. a violência não é o ponto, é a metáfora. me fez pensar em quantas vezes eu finjo autenticidade enquanto sigo scripts sociais. desconfortável, mas necessário.',
+        'borboleta': 'esse filme me deixou inquieta por dias. a ideia de que cada escolha tem peso real, que tentar controlar tudo pode destruir tudo. evan acha que pode consertar o passado, mas só piora. me fez pensar em arrependimentos e na arrogância de achar que eu sei o que é melhor. às vezes aceitar imperfeição é mais maduro do que tentar reescrever tudo. responsabilidade não é sobre controle, é sobre consequência.',
+        'vinganca': 'v não é herói, é símbolo. e isso me fascina: a ideia sobrevive à pessoa. o filme fala sobre narrativa como arma, sobre como ideias se espalham e resistem. me fez pensar no poder da linguagem, em como histórias moldam movimentos. não é sobre violência justificada, é sobre o que permanece quando tudo mais cai. ideias não morrem. e isso é ao mesmo tempo inspirador e assustador.',
+        'cisne': 'nina me assusta porque eu reconheço a obsessão. não no balé, mas na busca por perfeição que vira autodestruição. o filme mostra como excelência pode te consumir quando você perde o limite entre dedicação e doença. me fez questionar: quando esforço vira autossabotagem? quando perfeição deixa de ser meta e vira prisão? não tenho resposta, mas o filme me força a pensar nisso toda vez que me cobro demais.',
+        'origem': 'cobb carrega culpa disfarçada de missão. as camadas mentais são fascinantes, mas o tema real é como memória e arrependimento te prendem. o filme me fez pensar em como a gente constrói realidades internas e fica preso nelas. ideias plantadas crescem, e nem sempre são verdadeiras. me identifico com a dificuldade de separar o que é real do que eu construí na minha cabeça. inception não é sobre sonhos, é sobre peso emocional.',
+        'whiplash': 'fletcher é abusivo, mas o filme não romantiza isso. ele questiona: até onde vale ir por excelência? andrew se destrói perseguindo aprovação. e eu já fiz isso. não na música, mas na vida. me fez pensar no custo de ser o melhor, em quando ambição vira autoflagelação. o final é ambíguo de propósito: ele venceu ou perdeu? não sei. e acho que é esse o ponto. sucesso sem equilíbrio é vitória?',
+        'machina': 'ava manipula nathan e caleb, e o filme não julga. só mostra. me fascina porque levanta a questão: quem realmente tem poder? o criador ou a criação? nathan acha que controla, caleb acha que salva, mas ava sempre esteve jogando o próprio jogo. me fez pensar em quantas vezes eu subestimo inteligência alheia, em como controle é ilusão. o filme não é sobre robôs, é sobre subestimação e consequência.',
+        'poetas': 'keating ensina a pensar, não a obedecer. e isso custa caro. o filme me emociona porque mostra o conflito entre ser você mesmo e atender expectativas externas. neil morre porque não consegue conciliar os dois. me fez pensar em quantas vezes eu silencio partes de mim para caber em moldes. carpe diem não é sobre impulsividade, é sobre coragem de existir autenticamente. e isso é mais difícil do que parece.'
+    }
+};
+
+function alternarModo(modo) {
+    document.querySelectorAll('.mode-btn').forEach(btn => {
+        btn.classList.remove('active-livros', 'active-filmes');
+    });
+    event.target.classList.add(`active-${modo}`);
+    
+    document.getElementById('secao-livros').classList.toggle('d-none', modo !== 'livros');
+    document.getElementById('secao-filmes').classList.toggle('d-none', modo !== 'filmes');
+    document.getElementById('filtros-livros').classList.toggle('d-none', modo !== 'livros');
+    document.getElementById('filtros-filmes').classList.toggle('d-none', modo !== 'filmes');
+    
+    fecharTodasExpansoes();
+}
+
+function filtrar(eixo, modo) {
+    const container = modo === 'livros' ? 'filtros-livros' : 'filtros-filmes';
+    document.querySelectorAll(`#${container} .filter-btn`).forEach(btn => {
+        btn.classList.remove('active-livros', 'active-filmes');
+    });
+    event.target.classList.add(`active-${modo}`);
+    
+    const tbody = modo === 'livros' ? 'tbody-livros' : 'tbody-filmes';
+    const rows = document.querySelectorAll(`#${tbody} tr.item-row`);
+    
+    rows.forEach(row => {
+        const expansion = row.nextElementSibling;
+        if (eixo === 'todos' || row.dataset.eixo === eixo) {
+            row.style.display = '';
+            expansion.style.display = '';
+        } else {
+            row.style.display = 'none';
+            expansion.style.display = 'none';
+        }
+    });
+    
+    fecharTodasExpansoes();
+}
+
+function expandir(row, id, tipo) {
+    const expansion = row.nextElementSibling.querySelector('.expansion');
+    const content = expansion.querySelector('.expansion-content');
+    const isOpen = expansion.classList.contains('open');
+    
+    fecharTodasExpansoes();
+    
+    if (!isOpen) {
+        content.textContent = conteudo[tipo][id];
+        expansion.classList.add('open');
+        row.classList.add('expanded');
+    }
+}
+
+function fecharTodasExpansoes() {
+    document.querySelectorAll('.expansion').forEach(exp => exp.classList.remove('open'));
+    document.querySelectorAll('tr.item-row').forEach(row => row.classList.remove('expanded'));
+}
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.fade-scroll').forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+</html>
