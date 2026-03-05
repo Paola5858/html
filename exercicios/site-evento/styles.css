@@ -107,28 +107,20 @@ body {
 .hero h1 {
     font-size: 3rem;
     margin: 0;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    letter-spacing: 2px;
-    font-weight: 900;
+    text-shadow: 0 0 12px #ff66c4;
+    letter-spacing: 1.5px;
+    font-weight: 800;
     text-transform: uppercase;
-    color: #ff85d8;
+    color: #ff66c4;
     text-align: center;
-    animation: slideIn 1s ease-out;
+    animation: glow 2s infinite alternate;
     text-decoration: underline;
     text-underline-offset: 8px;
     text-decoration-thickness: 3px;
     text-decoration-color: #ff66c4;
-    text-shadow: 0 0 12px #ff66c4;
     line-height: 1.2;
     font-family: 'Poppins', sans-serif;
-    letter-spacing: 1.5px;
-    font-weight: 800;
     margin-bottom: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    color: #ff66c4;
-    text-shadow: 0 0 8px #ff66c4;
-    animation: glow 2s infinite alternate;
 }
 
 .hero p {
@@ -217,70 +209,6 @@ section {
     box-shadow: 0 8px 32px 0 rgba(255, 105, 180, 0.6), 0 0 0 8px rgba(255, 255, 255, 0.1);
     transform: scale(1.08) rotate(-2deg);
     filter: brightness(1.08) saturate(1.2);
-}
-
-.card {
-    background-color: rgba(255, 255, 255, 0.151);
-    border-radius: 12px;
-    padding: 20px;
-    width: 240px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s ease;
-    text-align: center;
-    backdrop-filter: blur(6px);
-    align-items: center;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.card img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-.card h3 {
-    margin: 8px 0 4px;
-    color: #ff85d8;
-}
-
-.card p {
-    color: #ccc;
-    font-size: 14px;
-}
-
-.organiza {
-    text-align: center;
-}
-html {
-    scroll-behavior: smooth;
-}
-.organiza img {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 30%;
-    margin-top: 20px;
-    border: 4px solid #ff66c4;
-    box-shadow: 0 2px 16px 0 #ffb3f0a0;
-    transition:
-        box-shadow 0.3s,
-        border-color 0.3s,
-        transform 0.3s,
-        filter 0.3s;
-}
-
-.organiza img:hover {
-    border-color: #fff;
-    box-shadow: 0 0 0 6px #ff66c4, 0 8px 32px 0 #ff66c4a0;
-    transform: scale(1.07) rotate(1deg);
-    filter: brightness(1.1) contrast(1.1);
-}
-
-.bombom-img {
-    width: 150px;
-    margin-top: 20px;
 }
 
 footer {
