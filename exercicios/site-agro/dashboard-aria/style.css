@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+
+/* CABEÇALHO */
+
+.topo {
+    height: 70px;
+    background-color: #1f2937;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+}
+
+.logo h1 {
+    font-size: 22px;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.botao-icone {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+/* LAYOUT */
+
+.layout {
+    display: flex;
+    min-height: calc(100vh - 120px);
+}
+
+
+/* MENU */
+
+.menu-lateral {
+    width: 220px;
+    background-color: #111827;
+    padding: 30px 20px;
+}
+
+.menu-lateral ul {
+    list-style: none;
+}
+
+.menu-lateral li {
+    margin-bottom: 10px;
+}
+
+.menu-lateral a {
+    display: block;
+
+    padding: 12px;
+
+    text-decoration: none;
+
+    color: #ddd;
+
+    border-radius: 5px;
+}
+
+.menu-lateral a:hover {
+    background-color: #374151;
+    color: white;
+}
+
+.menu-lateral a[aria-current="page"] {
+    background-color: #2563eb;
+    color: white;
+}
+
+
+/* CONTEÚDO */
+
+.conteudo {
+    flex: 1;
+    padding: 30px;
+}
+
+
+/* CABEÇALHO DA PÁGINA */
+
+.cabecalho-pagina {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.cabecalho-pagina p {
+    margin-top: 5px;
+    color: #666;
+}
+
+
+/* BOTÃO */
+
+.botao-principal {
+    padding: 10px 18px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background-color: #2563eb;
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* CARDS */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+}
+
+.numero {
+    font-size: 26px;
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+
+/* PESQUISA */
+
+.pesquisa {
+    background-color: white;
+
+    padding: 20px;
+
+    margin-bottom: 25px;
+
+    border-radius: 8px;
+}
+
+.pesquisa h2 {
+    margin-bottom: 15px;
+}
+
+.pesquisa form {
+    display: flex;
+
+    align-items: end;
+
+    gap: 10px;
+}
+
+.pesquisa label {
+    display: none;
+}
+
+.pesquisa input {
+    flex: 1;
+
+    padding: 10px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+}
+
+.pesquisa button {
+    padding: 10px 20px;
+
+    border: none;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+/* TABELA */
+
+.tabela-produtos {
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 8px;
+
+    overflow-x: auto;
+}
+
+.tabela-produtos h2 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+
+    padding: 12px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f3f4f6;
+}
+
+
+/* BOTÕES DA TABELA */
+
+td button {
+    border: none;
+
+    background-color: transparent;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    margin-right: 8px;
+}
+
+
+/* MENSAGENS */
+
+.mensagens {
+    margin-top: 20px;
+}
+
+.mensagens p {
+    background-color: #dcfce7;
+
+    padding: 15px;
+
+    border-radius: 5px;
+}
+
+
+/* RODAPÉ */
+
+footer {
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: #1f2937;
+
+    color: white;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .layout {
+        flex-direction: column;
+    }
+
+    .menu-lateral {
+        width: 100%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecalho-pagina {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+}
